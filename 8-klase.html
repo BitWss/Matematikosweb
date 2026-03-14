@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>8 klasė</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f6f9;
+      color: #2c3e50;
+      padding: 40px 20px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 8px;
+      color: #1a252f;
+      letter-spacing: 0.03em;
+    }
+    .subtitle {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #95a5a6;
+      margin-bottom: 40px;
+      letter-spacing: 0.02em;
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 28px;
+      font-size: 0.88rem;
+      color: #2980b9;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+    .back-link:hover { text-decoration: underline; }
+    .section {
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+      margin-bottom: 28px;
+      overflow: hidden;
+    }
+    .section-header {
+      background: #1a252f;
+      color: #f0f4f8;
+      padding: 16px 24px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: background 0.2s;
+    }
+    .section-header:hover { background: #2c3e50; }
+    .section-header .arrow { transition: transform 0.3s; font-size: 0.75rem; opacity: 0.7; }
+    .section-header.open .arrow { transform: rotate(180deg); }
+    .section-body { display: none; padding: 24px; gap: 20px; flex-direction: column; }
+    .section-body.open { display: flex; }
+    .pdf-item { border: 1px solid #dce3ea; border-radius: 6px; overflow: hidden; }
+    .pdf-label {
+      background: #f0f4f8;
+      padding: 10px 16px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border-bottom: 1px solid #dce3ea;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      letter-spacing: 0.02em;
+    }
+    .pdf-label {
+      cursor: pointer;
+      user-select: none;
+    }
+    .pdf-label-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .pdf-label a { font-size: 0.82rem; color: #2980b9; text-decoration: none; font-weight: 400; }
+    .pdf-label a:hover { text-decoration: underline; }
+    .pdf-arrow { font-size: 0.7rem; opacity: 0.5; transition: transform 0.3s; }
+    .pdf-arrow.open { transform: rotate(180deg); }
+    .pdf-collapse { display: none; }
+    .pdf-collapse.open { display: block; }
+    iframe.pdf-viewer { width: 100%; height: 600px; border: none; display: block; }
+  </style>
+</head>
+<body>
+
+  <a class="back-link" href="index.html">&larr; Grįžti į pradžią</a>
+  <h1>8 klasė</h1>
+  <p class="subtitle">Pasirinkite temą</p>
+
+
+  <div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+      100 lygčių
+      <span class="arrow">&#9660;</span>
+    </div>
+    <div class="section-body">
+
+      <div class="pdf-item">
+        <div class="pdf-label" onclick="togglePdf(this)">
+          <span>100 sunkesnių lygčių</span>
+          <div class="pdf-label-actions">
+            <a href="pdfs/8 klasė/100 lygčių/100 sunkesnių lygčių.pdf" target="_blank" onclick="event.stopPropagation()">Atsisiųsti</a>
+            <span class="pdf-arrow">&#9660;</span>
+          </div>
+        </div>
+        <div class="pdf-collapse">
+          <iframe class="pdf-viewer" src="pdfs/8 klasė/100 lygčių/100 sunkesnių lygčių.pdf"></iframe>
+        </div>
+      </div>
+      <div class="pdf-item">
+        <div class="pdf-label" onclick="togglePdf(this)">
+          <span>lygtys 100</span>
+          <div class="pdf-label-actions">
+            <a href="pdfs/8 klasė/100 lygčių/lygtys_100.pdf" target="_blank" onclick="event.stopPropagation()">Atsisiųsti</a>
+            <span class="pdf-arrow">&#9660;</span>
+          </div>
+        </div>
+        <div class="pdf-collapse">
+          <iframe class="pdf-viewer" src="pdfs/8 klasė/100 lygčių/lygtys_100.pdf"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+      8 klasė nežinomasis x
+      <span class="arrow">&#9660;</span>
+    </div>
+    <div class="section-body">
+
+      <div class="pdf-item">
+        <div class="pdf-label" onclick="togglePdf(this)">
+          <span>Apie nežinomąjį x</span>
+          <div class="pdf-label-actions">
+            <a href="pdfs/8 klasė/8 klasė nežinomasis x/Apie nežinomąjį x.pdf" target="_blank" onclick="event.stopPropagation()">Atsisiųsti</a>
+            <span class="pdf-arrow">&#9660;</span>
+          </div>
+        </div>
+        <div class="pdf-collapse">
+          <iframe class="pdf-viewer" src="pdfs/8 klasė/8 klasė nežinomasis x/Apie nežinomąjį x.pdf"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+      8 klasė stojamasis
+      <span class="arrow">&#9660;</span>
+    </div>
+    <div class="section-body">
+
+      <div class="pdf-item">
+        <div class="pdf-label" onclick="togglePdf(this)">
+          <span>Stojamasis matematikos bandomasis 8kl</span>
+          <div class="pdf-label-actions">
+            <a href="pdfs/8 klasė/8 klasė stojamasis/Stojamasis matematikos bandomasis 8kl.pdf" target="_blank" onclick="event.stopPropagation()">Atsisiųsti</a>
+            <span class="pdf-arrow">&#9660;</span>
+          </div>
+        </div>
+        <div class="pdf-collapse">
+          <iframe class="pdf-viewer" src="pdfs/8 klasė/8 klasė stojamasis/Stojamasis matematikos bandomasis 8kl.pdf"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleSection(header) {
+      header.classList.toggle('open');
+      header.nextElementSibling.classList.toggle('open');
+    }
+    function togglePdf(label) {
+      const collapse = label.nextElementSibling;
+      const arrow    = label.querySelector('.pdf-arrow');
+      collapse.classList.toggle('open');
+      arrow.classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>
