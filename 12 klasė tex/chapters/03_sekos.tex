@@ -1,0 +1,712 @@
+%==========================================================
+% CHAPTER: Sekos ir progresijos
+%==========================================================
+\chapter{Sekos ir progresijos}
+
+\section{Seka}
+
+\subsection{Sekos apibrėžimas ir žymėjimas}
+
+\begin{definition}
+\textbf{Skaičių seka} – tai funkcija $f: \mathbb{N} \to \mathbb{R}$, kurios argumentas yra natūralusis skaičius $n$, o funkcijos reikšmės yra sekos nariai. Sekos $n$-tasis narys žymimas $a_n$.
+\end{definition}
+
+Seka paprastai užrašoma surašant jos narius tam tikra tvarka:
+\[
+a_1,\; a_2,\; a_3,\; \ldots,\; a_n,\; \ldots
+\]
+arba trumpiau – $(a_n)_{n \in \mathbb{N}}$, arba tiesiog $(a_n)$.
+
+\begin{remark}
+Seka skiriasi nuo aibės tuo, kad narių tvarka yra svarbi. Pavyzdžiui, sekos $1, 2, 3$ ir $3, 2, 1$ yra skirtingos, nors ir susideda iš tų pačių elementų.
+\end{remark}
+
+\subsubsection*{Sekų klasifikacija}
+
+\begin{itemize}
+    \item \textbf{Baigtinė seka} – seka, turinti baigtinį skaičių narių:
+    \[
+    a_1, a_2, \ldots, a_k
+    \]
+    \item \textbf{Begalinė seka} – seka, turinti be galo daug narių:
+    \[
+    a_1, a_2, a_3, \ldots
+    \]
+    \item \textbf{Didėjanti seka} – jei kiekvienam $n \in \mathbb{N}$ galioja $a_n < a_{n+1}$.
+    \item \textbf{Mažėjanti seka} – jei kiekvienam $n \in \mathbb{N}$ galioja $a_n > a_{n+1}$.
+    \item \textbf{Pastovi seka} – jei kiekvienam $n \in \mathbb{N}$ galioja $a_n = c$, kur $c$ – konstanta.
+\end{itemize}
+
+\subsubsection*{Sekos žymėjimas}
+
+Sekos nariai žymimi naudojant indeksus:
+\begin{itemize}
+    \item $a_1$ – pirmasis narys,
+    \item $a_2$ – antrasis narys,
+    \item $a_n$ – $n$-tasis (bendrasis) narys,
+    \item $a_{n-1}$ – narys prieš $n$-tąjį,
+    \item $a_{n+1}$ – narys po $n$-tojo.
+\end{itemize}
+
+\begin{example}
+Seka $2, 4, 6, 8, \ldots$ yra begalinė didėjanti seka. Čia $a_1 = 2$, $a_2 = 4$, $a_3 = 6$, o bendrasis narys $a_n = 2n$.
+\end{example}
+
+\begin{example}
+Seka $1, \tfrac{1}{2}, \tfrac{1}{3}, \tfrac{1}{4}, \ldots$ yra begalinė mažėjanti seka, kurios bendrasis narys $a_n = \dfrac{1}{n}$.
+\end{example}
+
+% -------------------------------------------------------
+\subsection{Sekos narių radimas}
+
+Sekos nariai gali būti randami dviem pagrindiniais būdais: naudojant \textbf{bendrąją (n-tojo nario) formulę} arba \textbf{rekurentinę formulę}.
+
+\subsubsection*{Bendroji (n-tojo nario) formulė}
+
+\begin{definition}
+\textbf{Bendroji formulė} (arba $n$-tojo nario formulė) – tai išraiška, leidžianti apskaičiuoti bet kurį sekos narį $a_n$ tiesiogiai pagal jo eilės numerį $n$, neprisiklausant nuo kitų narių.
+\end{definition}
+
+\begin{example}
+Duota seka su bendrąja formule $a_n = 3n - 1$. Raskite pirmuosius penkis narius.
+
+\textbf{Sprendimas:}
+\begin{align*}
+a_1 &= 3 \cdot 1 - 1 = 2, \\
+a_2 &= 3 \cdot 2 - 1 = 5, \\
+a_3 &= 3 \cdot 3 - 1 = 8, \\
+a_4 &= 3 \cdot 4 - 1 = 11, \\
+a_5 &= 3 \cdot 5 - 1 = 14.
+\end{align*}
+Seka: $2, 5, 8, 11, 14, \ldots$
+\end{example}
+
+\begin{example}
+Duota seka $a_n = \dfrac{n^2 + 1}{n}$. Raskite $a_1$, $a_3$ ir $a_{10}$.
+
+\textbf{Sprendimas:}
+\[
+a_1 = \frac{1+1}{1} = 2, \quad
+a_3 = \frac{9+1}{3} = \frac{10}{3}, \quad
+a_{10} = \frac{100+1}{10} = \frac{101}{10}.
+\]
+\end{example}
+
+\subsubsection*{Rekurentinė formulė}
+
+\begin{definition}
+\textbf{Rekurentinė formulė} išreiškia sekos $n$-tąjį narį per vieną ar kelis ankstesniuosius narius. Norint visiškai apibrėžti seką, papildomai nurodomas vienas ar keli pradiniai nariai.
+\end{definition}
+
+\begin{example}
+Seka apibrėžta rekurentiškai: $a_1 = 3$, $a_{n+1} = a_n + 4$. Raskite pirmuosius penkis narius.
+
+\textbf{Sprendimas:}
+\begin{align*}
+a_1 &= 3, \\
+a_2 &= a_1 + 4 = 3 + 4 = 7, \\
+a_3 &= a_2 + 4 = 7 + 4 = 11, \\
+a_4 &= a_3 + 4 = 11 + 4 = 15, \\
+a_5 &= a_4 + 4 = 15 + 4 = 19.
+\end{align*}
+\end{example}
+
+\begin{example}[Fibonačio seka]
+Garsioji Fibonačio seka apibrėžiama taip:
+\[
+F_1 = 1, \quad F_2 = 1, \quad F_{n} = F_{n-1} + F_{n-2}, \quad n \geq 3.
+\]
+Pirmuosius dešimt narių: $1, 1, 2, 3, 5, 8, 13, 21, 34, 55, \ldots$
+\end{example}
+
+\subsubsection*{Sekos narių radimas pagal pirmuosius narius}
+
+Kartais seka užduodama išvardijant kelis pirmuosius narius, ir reikia atspėti bei užrašyti bendrąją formulę.
+
+\begin{example}
+Seka: $3, 6, 9, 12, \ldots$ Raskite bendrąją formulę.
+
+\textbf{Sprendimas:} Pastebime, kad kiekvienas narys yra trigubas jo eilės numerio:
+\[
+a_n = 3n.
+\]
+Patikriname: $a_1 = 3$, $a_2 = 6$, $a_3 = 9$ – teisingai.
+\end{example}
+
+\begin{example}
+Seka: $\dfrac{1}{2},\; \dfrac{2}{3},\; \dfrac{3}{4},\; \dfrac{4}{5},\; \ldots$ Raskite bendrąją formulę ir $a_{100}$.
+
+\textbf{Sprendimas:} Skaitiklis lygus $n$, vardiklis lygus $n+1$, todėl:
+\[
+a_n = \frac{n}{n+1}.
+\]
+Tada:
+\[
+a_{100} = \frac{100}{101}.
+\]
+\end{example}
+
+\subsubsection*{Sekos didėjimo ir mažėjimo tyrimas}
+
+Norėdami nustatyti, ar seka didėja ar mažėja, galime palyginti $a_{n+1}$ ir $a_n$:
+\begin{itemize}
+    \item Jei $a_{n+1} - a_n > 0$ visiems $n$, seka \textbf{didėja}.
+    \item Jei $a_{n+1} - a_n < 0$ visiems $n$, seka \textbf{mažėja}.
+    \item Jei nariai teigiami, galima tirti ir santykį $\dfrac{a_{n+1}}{a_n}$: jei $> 1$ – didėja, jei $< 1$ – mažėja.
+\end{itemize}
+
+\begin{example}
+Įrodykite, kad seka $a_n = 2n + 5$ yra didėjanti.
+
+\textbf{Sprendimas:}
+\[
+a_{n+1} - a_n = \bigl(2(n+1)+5\bigr) - (2n+5) = 2n + 7 - 2n - 5 = 2 > 0.
+\]
+Kadangi skirtumas teigiamas visiems $n \in \mathbb{N}$, seka yra didėjanti.
+\end{example}
+
+\begin{exercise}
+Duota seka $a_n = \dfrac{3n-1}{n+2}$. 
+\begin{enumerate}[label=\alph*)]
+    \item Apskaičiuokite pirmuosius keturis sekos narius.
+    \item Įrodykite, kad seka yra didėjanti.
+    \item Raskite $a_{50}$.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+Seka apibrėžta rekurentiškai: $a_1 = 2$, $\;a_{n+1} = \dfrac{a_n}{2} + 1$.
+\begin{enumerate}[label=\alph*)]
+    \item Raskite pirmuosius penkis narius.
+    \item Nustatykite, ar seka didėjanti, mažėjanti ar pastovi.
+\end{enumerate}
+\end{exercise}
+
+\section{Aritmetinė progresija}
+
+\subsection{Apibrėžimas ir savybės}
+
+\begin{definition}
+\textbf{Aritmetine progresija} vadinama skaičių seka $(a_n)$, kurios kiekvienas narys, pradedant antruoju, lygus prieš jį esančiam nariui, sudėtam su tuo pačiu pastoviu skaičiumi $d$:
+\[
+a_{n+1} = a_n + d, \quad n \in \mathbb{N}.
+\]
+Skaičius $d = a_{n+1} - a_n$ vadinamas \textbf{aritmetinės progresijos skirtumu}.
+\end{definition}
+
+\begin{example}
+Seka $2,\ 5,\ 8,\ 11,\ 14,\ \ldots$ yra aritmetinė progresija, nes $d = 5 - 2 = 8 - 5 = 3$.
+\end{example}
+
+\begin{example}
+Seka $10,\ 7,\ 4,\ 1,\ -2,\ \ldots$ yra aritmetinė progresija su $d = 7 - 10 = -3$.
+\end{example}
+
+\subsubsection*{Progresijų klasifikacija pagal skirtumą}
+
+Priklausomai nuo skirtumo $d$ ženklo, aritmetinė progresija skirstoma į tris tipus:
+
+\begin{itemize}
+    \item \textbf{Didėjančioji}, kai $d > 0$ — kiekvienas narys didesnis už prieš jį einantį.
+    \item \textbf{Pastovioji}, kai $d = 0$ — visi nariai vienodi: $a_1 = a_2 = \cdots = a_n$.
+    \item \textbf{Mažėjančioji}, kai $d < 0$ — kiekvienas narys mažesnis už prieš jį einantį.
+\end{itemize}
+
+\subsubsection*{Charakteringoji savybė}
+
+\begin{theorem}[Charakteringoji aritmetinės progresijos savybė]
+Seka $(a_n)$ yra aritmetinė progresija tada ir tik tada, kai kiekvienas jos narys (išskyrus pirmąjį ir paskutinįjį baigtinėje sekoje) lygus gretimų narių \textbf{aritmetiniam vidurkiui}:
+\[
+a_n = \frac{a_{n-1} + a_{n+1}}{2}, \quad n \geq 2.
+\]
+\end{theorem}
+
+\begin{proof}
+Kadangi $a_{n-1} = a_n - d$ ir $a_{n+1} = a_n + d$, tai:
+\[
+\frac{a_{n-1} + a_{n+1}}{2} = \frac{(a_n - d) + (a_n + d)}{2} = \frac{2a_n}{2} = a_n. \qedhere
+\]
+\end{proof}
+
+\begin{tcolorbox}[colback=blue!5!white, colframe=blue!60!black, title={Svarbi pastaba}]
+Ši savybė dažnai naudojama įrodyti, kad duota seka yra aritmetinė progresija, arba rasti nežinomus narius. Pavyzdžiui, jei žinome, kad $a_3 = 7$ ir $a_7 = 19$, tai $a_5 = \dfrac{a_3 + a_7}{2} = \dfrac{7 + 19}{2} = 13$.
+\end{tcolorbox}
+
+\subsubsection*{Simetrinių narių savybė}
+
+\begin{theorem}
+Baigtinėje aritmetinėje progresijoje $(a_1, a_2, \ldots, a_n)$ vienodu atstumu nuo abiejų galų esančių narių suma yra pastovi ir lygi pirmojo ir paskutiniojo narių sumai:
+\[
+a_k + a_{n+1-k} = a_1 + a_n, \quad k = 1, 2, \ldots, n.
+\]
+\end{theorem}
+
+\begin{proof}
+\begin{align*}
+a_k + a_{n+1-k} &= \bigl[a_1 + (k-1)d\bigr] + \bigl[a_1 + (n-k)d\bigr] \\
+&= 2a_1 + (k - 1 + n - k)d \\
+&= 2a_1 + (n-1)d \\
+&= a_1 + \bigl[a_1 + (n-1)d\bigr] = a_1 + a_n. \qedhere
+\end{align*}
+\end{proof}
+
+---
+
+\subsection{Bendrasis narys}
+
+Žinodami pirmąjį narį $a_1$ ir skirtumą $d$, galime išreikšti bet kurį progresijos narį.
+
+Iš aritmetinės progresijos apibrėžimo:
+\begin{align*}
+a_1 &= a_1,\\
+a_2 &= a_1 + d,\\
+a_3 &= a_1 + 2d,\\
+a_4 &= a_1 + 3d,\\
+&\vdots\\
+a_n &= a_1 + (n-1)d.
+\end{align*}
+
+\begin{tcolorbox}[colback=green!5!white, colframe=green!60!black, title={Bendrojo nario formulė}]
+\[
+\boxed{a_n = a_1 + (n-1)d}
+\]
+čia:
+\begin{itemize}
+    \item $a_n$ — $n$-tasis narys,
+    \item $a_1$ — pirmasis narys,
+    \item $d$ — progresijos skirtumas,
+    \item $n$ — nario eilės numeris ($n \in \mathbb{N}$).
+\end{itemize}
+\end{tcolorbox}
+
+\begin{remark}
+Bendrojo nario formulę galima apibendrinti: $n$-tąjį narį galima reikšti per bet kurį $m$-tąjį narį:
+\[
+a_n = a_m + (n - m)d.
+\]
+\end{remark}
+
+\begin{example}
+Aritmetinė progresija: $3,\ 7,\ 11,\ 15,\ \ldots$ Raskite $20$-ąjį narį.
+
+\textit{Sprendimas:} Čia $a_1 = 3$, $d = 7 - 3 = 4$. Tada:
+\[
+a_{20} = 3 + (20 - 1) \cdot 4 = 3 + 76 = 79.
+\]
+\end{example}
+
+\begin{example}
+Žinoma, kad $a_5 = 17$ ir $a_{12} = 45$. Raskite $a_1$ ir $d$.
+
+\textit{Sprendimas:} Sudarome lygtis:
+\[
+\begin{cases}
+a_1 + 4d = 17,\\
+a_1 + 11d = 45.
+\end{cases}
+\]
+Atimame pirmąją lygtį iš antrosios:
+\[
+7d = 28 \implies d = 4.
+\]
+Įstatome atgal: $a_1 = 17 - 4 \cdot 4 = 1$.
+\end{example}
+
+\begin{exercise}
+Aritmetinės progresijos pirmasis narys $a_1 = -6$, o skirtumas $d = 2{,}5$. Raskite $30$-ąjį narį.
+\end{exercise}
+
+\begin{exercise}
+Seka $4,\ x,\ 16,\ \ldots$ yra aritmetinė progresija. Raskite $x$.
+\end{exercise}
+
+---
+
+\subsection{Aritmetinės progresijos suma}
+
+\begin{definition}
+Baigtinės aritmetinės progresijos \textbf{pirmųjų $n$ narių suma} žymima $S_n$:
+\[
+S_n = a_1 + a_2 + \cdots + a_n = \sum_{k=1}^{n} a_k.
+\]
+\end{definition}
+
+\subsubsection*{Sumos formulės išvedimas}
+
+Užrašome $S_n$ dviem būdais — tiesiogine ir atvirkštine tvarka, o po to sudedame:
+
+\begin{align*}
+S_n &= a_1 + (a_1 + d) + (a_1 + 2d) + \cdots + a_n,\\
+S_n &= a_n + (a_n - d) + (a_n - 2d) + \cdots + a_1.
+\end{align*}
+
+Sudėję abi lygybes:
+\[
+2S_n = \underbrace{(a_1 + a_n) + (a_1 + a_n) + \cdots + (a_1 + a_n)}_{n \text{ kartų}} = n(a_1 + a_n).
+\]
+
+\begin{tcolorbox}[colback=red!5!white, colframe=red!60!black, title={Sumos formulės}]
+\textbf{I formulė} (per pirm. ir paskut. narį):
+\[
+\boxed{S_n = \frac{n(a_1 + a_n)}{2}}
+\]
+
+\textbf{II formulė} (per pirm. narį ir skirtumą):
+\[
+\boxed{S_n = \frac{n\bigl(2a_1 + (n-1)d\bigr)}{2}}
+\]
+\end{tcolorbox}
+
+Antroji formulė gaunama iš pirmosios įstačius $a_n = a_1 + (n-1)d$:
+\[
+S_n = \frac{n\bigl(a_1 + a_1 + (n-1)d\bigr)}{2} = \frac{n\bigl(2a_1 + (n-1)d\bigr)}{2}.
+\]
+
+\begin{example}
+Raskite aritmetinės progresijos $2,\ 5,\ 8,\ \ldots$ pirmųjų $10$ narių sumą.
+
+\textit{Sprendimas:} $a_1 = 2$, $d = 3$, $n = 10$.
+\[
+S_{10} = \frac{10\bigl(2 \cdot 2 + (10-1) \cdot 3\bigr)}{2} = \frac{10(4 + 27)}{2} = \frac{10 \cdot 31}{2} = 155.
+\]
+\end{example}
+
+\begin{example}
+Raskite visų dviženklio natūraliojo skaičiaus, dalaus iš $3$, sumą.
+
+\textit{Sprendimas:} Tokie skaičiai yra $12,\ 15,\ 18,\ \ldots,\ 99$.
+
+Čia $a_1 = 12$, $d = 3$, $a_n = 99$. Randame $n$:
+\[
+99 = 12 + (n-1) \cdot 3 \implies (n-1) = \frac{87}{3} = 29 \implies n = 30.
+\]
+Suma:
+\[
+S_{30} = \frac{30(12 + 99)}{2} = \frac{30 \cdot 111}{2} = 1665.
+\]
+\end{example}
+
+\begin{exercise}
+Raskite aritmetinės progresijos $-5,\ -1,\ 3,\ 7,\ \ldots$ pirmųjų $15$ narių sumą.
+\end{exercise}
+
+\begin{exercise}
+Aritmetinės progresijos pirmųjų $n$ narių suma lygi $S_n = 4n^2 - n$. Raskite progresijos pirmąjį narį, skirtumą ir $n$-tojo nario formulę.
+
+\textit{Pastaba:} Pasinaudokite tuo, kad $a_n = S_n - S_{n-1}$, kai $n \geq 2$, ir $a_1 = S_1$.
+\end{exercise}
+
+\subsubsection*{Ryšys tarp $S_n$ ir $a_n$}
+
+\begin{theorem}
+Jei $S_n$ — pirmųjų $n$ narių suma, tai:
+\[
+a_n = S_n - S_{n-1}, \quad n \geq 2, \qquad a_1 = S_1.
+\]
+\end{theorem}
+
+Ši savybė ypač naudinga, kai $n$-tojo nario formulę reikia gauti žinant tik sumos formulę.
+
+\subsubsection*{Apibendrinamoji formulių lentelė}
+
+\begin{center}
+\begin{tabular}{|l|c|}
+\hline
+\textbf{Dydis} & \textbf{Formulė} \\
+\hline
+Rekurentinis ryšys & $a_{n+1} = a_n + d$ \\
+\hline
+Bendrasis narys & $a_n = a_1 + (n-1)d$ \\
+\hline
+Bendrasis narys (per $a_m$) & $a_n = a_m + (n-m)d$ \\
+\hline
+Charakteringoji savybė & $a_n = \dfrac{a_{n-1}+a_{n+1}}{2}$ \\
+\hline
+Suma (per kraštiniai narius) & $S_n = \dfrac{n(a_1+a_n)}{2}$ \\
+\hline
+Suma (per $a_1$ ir $d$) & $S_n = \dfrac{n(2a_1+(n-1)d)}{2}$ \\
+\hline
+$n$-tasis narys per sumą & $a_n = S_n - S_{n-1}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Geometrinė progresija}
+
+\subsection{Apibrėžimas ir savybės}
+
+\begin{definition}
+\textbf{Geometrinė progresija} – tai skaičių seka $(b_n)$, kurios kiekvienas narys, pradedant antruoju, yra lygus prieš jį einančiam nariui, padaugintam iš pastovaus skaičiaus $q \neq 0$, vadinamo \textbf{progesijos vardikliu} (arba kvocientu). Pirmasis narys $b_1 \neq 0$.
+\end{definition}
+
+Tai reiškia, kad geometrinės progresijos apibrėžimas ekvivalentus sąlygai:
+\[
+\frac{b_{n+1}}{b_n} = q = \text{const}, \quad \forall n \in \mathbb{N}.
+\]
+
+\begin{example}
+Sekos $2,\ 6,\ 18,\ 54,\ 162,\ \ldots$ kiekvienas narys gaunamas ankstesnįjį padauginus iš $q = 3$, todėl tai geometrinė progresija su $b_1 = 2$, $q = 3$.
+\end{example}
+
+\begin{example}
+Seka $80,\ 40,\ 20,\ 10,\ 5,\ \ldots$ yra geometrinė progresija su $b_1 = 80$ ir $q = \tfrac{1}{2}$.
+\end{example}
+
+\subsubsection*{Pagrindinės savybės}
+
+\begin{enumerate}[label=\arabic*.]
+    \item Jei $q > 0$ ir $b_1 > 0$, tai visi nariai \textbf{teigiami} ir progresija \textbf{monotoniška} ($q > 1$ – didėjanti, $0 < q < 1$ – mažėjanti).
+    \item Jei $q < 0$, tai nariai \textbf{kaitalioja ženklą}: teigiami ir neigiami nariai kaitaliojasi.
+    \item Jei $q = 1$, tai visi nariai \textbf{lygūs} $b_1$ (pastovus skaičių srautas).
+    \item Jei $q = -1$, tai nariai kaitaliojasi: $b_1,\ -b_1,\ b_1,\ -b_1,\ \ldots$
+    \item Kiekvienas vidinis progresijos narys yra \textbf{geometrinis vidurkis} kaimyninių narių:
+    \[
+        b_n^2 = b_{n-1} \cdot b_{n+1}.
+    \]
+    \item Narių \textbf{sandaugos} savybė: jei $k + l = m + n$, tai
+    \[
+        b_k \cdot b_l = b_m \cdot b_n.
+    \]
+\end{enumerate}
+
+\begin{remark}
+Geometrinės progresijos vardiklį $q$ galima rasti pagal bet kurias dvi gretimai einančias nares:
+\[
+    q = \frac{b_{n+1}}{b_n}.
+\]
+\end{remark}
+
+\begin{exercise}
+Nustatykite, ar seka $-3;\ 6;\ -12;\ 24;\ \ldots$ yra geometrinė progresija, ir raskite jos vardiklį.
+
+\textbf{Sprendimas:} Patikriname santykius:
+\[
+\frac{6}{-3} = -2, \quad \frac{-12}{6} = -2, \quad \frac{24}{-12} = -2.
+\]
+Santykis pastovus, todėl tai geometrinė progresija su $b_1 = -3$, $q = -2$.
+\end{exercise}
+
+% -------------------------------------------------------
+\subsection{Bendrasis narys}
+
+Geometrinės progresijos nariai išreiškiami rekurentiškai:
+\[
+    b_1,\quad b_2 = b_1 q,\quad b_3 = b_1 q^2,\quad \ldots
+\]
+Iš to išplaukia bendrojo nario formulė:
+
+\begin{tcolorbox}[colback=blue!5!white, colframe=blue!60!black, title=Bendrojo nario formulė]
+\[
+    b_n = b_1 \cdot q^{n-1}, \quad n \in \mathbb{N}.
+\]
+\end{tcolorbox}
+
+\begin{example}
+Geometrinės progresijos $b_1 = 5$, $q = 2$. Raskite $b_7$.
+\[
+    b_7 = 5 \cdot 2^{7-1} = 5 \cdot 64 = 320.
+\]
+\end{example}
+
+\begin{example}
+Geometrinės progresijos pirmasis narys $b_1 = 243$, vardiklis $q = \tfrac{1}{3}$. Raskite $b_5$.
+\[
+    b_5 = 243 \cdot \left(\frac{1}{3}\right)^{4} = 243 \cdot \frac{1}{81} = 3.
+\]
+\end{example}
+
+\subsubsection*{Bendrojo nario formulės išvedimas}
+
+Naudojant apibrėžimą ir matematinę indukciją:
+\begin{align*}
+    b_1 &= b_1, \\
+    b_2 &= b_1 \cdot q, \\
+    b_3 &= b_2 \cdot q = b_1 \cdot q^2, \\
+    b_4 &= b_3 \cdot q = b_1 \cdot q^3, \\
+    &\vdots \\
+    b_n &= b_1 \cdot q^{n-1}.
+\end{align*}
+
+\begin{exercise}
+Geometrinės progresijos trečiasis narys yra $b_3 = 12$, o šeštasis – $b_6 = 96$. Raskite $b_1$ ir $q$.
+
+\textbf{Sprendimas:} Sudarome lygtis:
+\[
+    b_3 = b_1 q^2 = 12, \qquad b_6 = b_1 q^5 = 96.
+\]
+Dalydami antrą iš pirmos:
+\[
+    \frac{b_1 q^5}{b_1 q^2} = \frac{96}{12} \implies q^3 = 8 \implies q = 2.
+\]
+Tada $b_1 = \dfrac{12}{4} = 3$. \textbf{Atsakymas:} $b_1 = 3$, $q = 2$.
+\end{exercise}
+
+\begin{exercise}
+Užrašykite $n$-tojo nario formulę progresijai $\tfrac{1}{2};\ \tfrac{1}{6};\ \tfrac{1}{18};\ \ldots$
+
+\textbf{Sprendimas:} $b_1 = \tfrac{1}{2}$, $q = \tfrac{1/6}{1/2} = \tfrac{1}{3}$. Todėl
+\[
+    b_n = \frac{1}{2} \cdot \left(\frac{1}{3}\right)^{n-1}.
+\]
+\end{exercise}
+
+% -------------------------------------------------------
+\subsection{Geometrinės progresijos suma}
+
+\begin{definition}
+Pirmuosius $n$ geometrinės progresijos narių vadiname \textbf{daline suma} ir žymime $S_n$:
+\[
+    S_n = b_1 + b_2 + b_3 + \cdots + b_n = \sum_{k=1}^{n} b_k.
+\]
+\end{definition}
+
+\subsubsection*{Sumos formulės išvedimas}
+
+Užrašome dvi lygybes:
+\begin{align}
+    S_n &= b_1 + b_1 q + b_1 q^2 + \cdots + b_1 q^{n-1}, \label{eq:S}\\
+    q S_n &= b_1 q + b_1 q^2 + \cdots + b_1 q^{n-1} + b_1 q^{n}. \label{eq:qS}
+\end{align}
+Atimame \eqref{eq:qS} iš \eqref{eq:S}:
+\[
+    S_n - q S_n = b_1 - b_1 q^n \implies S_n(1 - q) = b_1(1 - q^n).
+\]
+Kai $q \neq 1$, dalijame iš $(1-q)$:
+
+\begin{tcolorbox}[colback=green!5!white, colframe=green!60!black, title=Dalinės sumos formulė ($q \neq 1$)]
+\[
+    S_n = \frac{b_1(1 - q^n)}{1 - q} = \frac{b_1 - b_n q}{1 - q}.
+\]
+\end{tcolorbox}
+
+\begin{remark}
+Kai $q = 1$, visi nariai lygūs $b_1$, todėl:
+\[
+    S_n = n \cdot b_1.
+\]
+\end{remark}
+
+\begin{example}
+Apskaičiuokite geometrinės progresijos $3;\ 6;\ 12;\ 24;\ \ldots$ pirmuosius 8 narių sumą.
+
+\textbf{Sprendimas:} $b_1 = 3$, $q = 2$, $n = 8$.
+\[
+    S_8 = \frac{3(1 - 2^8)}{1 - 2} = \frac{3(1 - 256)}{-1} = \frac{3 \cdot (-255)}{-1} = 765.
+\]
+\end{example}
+
+\begin{example}
+Raskite baigtinės progresijos $25;\ 125;\ 625;\ \ldots;\ 15\,625$ narių sumą.
+
+\textbf{Sprendimas:} $b_1 = 25$, $q = 5$. Pirmiausia randame $n$:
+\[
+    b_n = 25 \cdot 5^{n-1} = 15\,625 \implies 5^{n-1} = 625 = 5^4 \implies n = 5.
+\]
+\[
+    S_5 = \frac{25(1 - 5^5)}{1 - 5} = \frac{25(1 - 3125)}{-4} = \frac{25 \cdot (-3124)}{-4} = \frac{78\,100}{4} = 19\,525.
+\]
+\end{example}
+
+\begin{exercise}
+Geometrinės progresijos $b_1 = 4$, $q = -\tfrac{1}{2}$. Apskaičiuokite $S_6$.
+
+\textbf{Sprendimas:}
+\[
+    S_6 = \frac{4\!\left(1 - \left(-\tfrac{1}{2}\right)^6\right)}{1 - \left(-\tfrac{1}{2}\right)}
+        = \frac{4\!\left(1 - \tfrac{1}{64}\right)}{\tfrac{3}{2}}
+        = \frac{4 \cdot \tfrac{63}{64}}{\tfrac{3}{2}}
+        = \frac{\tfrac{63}{16}}{\tfrac{3}{2}}
+        = \frac{63}{16} \cdot \frac{2}{3}
+        = \frac{126}{48} = \frac{21}{8}.
+\]
+\end{exercise}
+
+% -------------------------------------------------------
+\subsection{Begalinė geometrinė progresija (A kursas)}
+
+Kai geometrinės progresijos vardiklis tenkina sąlygą $|q| < 1$, nariai artėja prie nulio:
+\[
+    b_n = b_1 q^{n-1} \xrightarrow{n \to \infty} 0.
+\]
+Tokia progresija vadinama \textbf{nykstamąja geometrine progresija}.
+
+\subsubsection*{Begalinės sumos formulė}
+
+Nagrinėjame dalinę sumą, kai $|q| < 1$:
+\[
+    S_n = \frac{b_1(1 - q^n)}{1 - q}.
+\]
+Kai $n \to \infty$, turime $q^n \to 0$, todėl:
+
+\begin{tcolorbox}[colback=orange!5!white, colframe=orange!70!black, title=Begalinės geometrinės progresijos suma]
+\[
+    S = \lim_{n \to \infty} S_n = \frac{b_1}{1 - q}, \quad |q| < 1.
+\]
+\end{tcolorbox}
+
+\begin{remark}
+Jei $|q| \geq 1$ (ir $q \neq $ bet koks toks atvejis), dalinė suma neturi baigtinės ribos, todėl begalinė suma neegzistuoja.
+\end{remark}
+
+\begin{example}
+Raskite begalinės geometrinės progresijos $12;\ 4;\ \tfrac{4}{3};\ \tfrac{4}{9};\ \ldots$ sumą.
+
+\textbf{Sprendimas:} $b_1 = 12$, $q = \tfrac{1}{3}$, $|q| < 1$. Tada:
+\[
+    S = \frac{12}{1 - \tfrac{1}{3}} = \frac{12}{\tfrac{2}{3}} = 12 \cdot \frac{3}{2} = 18.
+\]
+\end{example}
+
+\begin{example}
+Begalinės geometrinės progresijos suma $S = 9$, o pirmasis narys $b_1 = 6$. Raskite vardiklį $q$.
+
+\textbf{Sprendimas:} Iš formulės $S = \dfrac{b_1}{1-q}$:
+\[
+    9 = \frac{6}{1 - q} \implies 1 - q = \frac{6}{9} = \frac{2}{3} \implies q = \frac{1}{3}.
+\]
+Patikriname: $|q| = \tfrac{1}{3} < 1$ – \textbf{sąlyga tenkinama}.
+\end{example}
+
+\begin{example}[Periodinė trupmena]
+Periodinę dešimtainę trupmeną $0{,}333\ldots = 0{,}\overline{3}$ užrašykime kaip paprastą trupmeną.
+
+\textbf{Sprendimas:} Rašome kaip begalinę geometrinę progresiją:
+\[
+    0{,}\overline{3} = \frac{3}{10} + \frac{3}{100} + \frac{3}{1000} + \cdots
+\]
+Čia $b_1 = \tfrac{3}{10}$, $q = \tfrac{1}{10}$. Tada:
+\[
+    S = \frac{\tfrac{3}{10}}{1 - \tfrac{1}{10}} = \frac{\tfrac{3}{10}}{\tfrac{9}{10}} = \frac{3}{9} = \frac{1}{3}.
+\]
+\end{example}
+
+\begin{exercise}
+Begalinės geometrinės progresijos suma lygi $-12$, o pirmasis narys lygus $b_1 = -8$. Raskite $q$ ir patikrinkite, ar egzistuoja begalinė suma.
+
+\textbf{Sprendimas:}
+\[
+    -12 = \frac{-8}{1 - q} \implies 1 - q = \frac{-8}{-12} = \frac{2}{3} \implies q = \frac{1}{3}.
+\]
+Kadangi $|q| = \tfrac{1}{3} < 1$, begalinė suma egzistuoja. \textbf{Atsakymas:} $q = \tfrac{1}{3}$.
+\end{exercise}
+
+\subsubsection*{Apibendrinimas: formulių lentelė}
+
+\begin{center}
+\begin{tabular}{|l|c|}
+\hline
+\textbf{Dydis} & \textbf{Formulė} \\
+\hline
+Bendrasis narys & $b_n = b_1 \cdot q^{n-1}$ \\
+\hline
+Dalinė suma ($q \neq 1$) & $S_n = \dfrac{b_1(1-q^n)}{1-q}$ \\[8pt]
+\hline
+Dalinė suma ($q = 1$) & $S_n = n \cdot b_1$ \\
+\hline
+Begalinė suma ($|q|<1$) & $S = \dfrac{b_1}{1-q}$ \\[8pt]
+\hline
+Geometrinis vidurkis & $b_n^2 = b_{n-1} \cdot b_{n+1}$ \\
+\hline
+\end{tabular}
+\end{center}
+

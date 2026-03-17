@@ -1,0 +1,397 @@
+\chapter{VBE formulių sąrašas}
+
+Šiame skyriuje pateikiamos visos formulės, kuriomis galima naudotis matematikos
+valstybinio brandos egzamino metu. Formulės atitinka Nacionalinės švietimo agentūros
+(NŠA) parengtą oficialų formulių rinkinį.
+
+% =====================================================================
+\section{Greitosios daugybos formulės}
+% =====================================================================
+
+\begin{tcolorbox}[colback=blue!5!white, colframe=blue!60!black, title=Greitosios daugybos formulės]
+\begin{align}
+(a \pm b)^2 &= a^2 \pm 2ab + b^2 \\[6pt]
+(a \pm b)^3 &= a^3 \pm 3a^2b + 3ab^2 \pm b^3 \\[6pt]
+a^2 - b^2   &= (a-b)(a+b) \\[6pt]
+a^3 \pm b^3 &= (a \pm b)(a^2 \mp ab + b^2)
+\end{align}
+\end{tcolorbox}
+
+% =====================================================================
+\section{Laipsniai ir šaknys}
+% =====================================================================
+
+\subsection{Laipsnių savybės}
+
+Čia $a > 0$, $a \neq 1$, $n \in \mathbb{N}$, $n > 1$, $m \in \mathbb{Z}$.
+
+\begin{align}
+a^{-n}        &= \frac{1}{a^n} \\[6pt]
+a^m \cdot a^n &= a^{m+n} \\[6pt]
+a^m : a^n     &= a^{m-n} \\[6pt]
+(a^m)^n       &= a^{mn} \\[6pt]
+(ab)^n        &= a^n b^n \\[6pt]
+\left(\frac{a}{b}\right)^n &= \frac{a^n}{b^n}
+\end{align}
+
+\subsection{Šaknų savybės}
+
+Jei $\sqrt[n]{b} = a$, tai $a^n = b$ \quad ($n \in \mathbb{N}$, $n > 1$):
+
+\begin{align}
+\sqrt[n]{ab}         &= \sqrt[n]{a}\cdot\sqrt[n]{b} \\[6pt]
+\sqrt[n]{\frac{a}{b}} &= \frac{\sqrt[n]{a}}{\sqrt[n]{b}} \\[6pt]
+\sqrt[n]{a^m}        &= a^{m/n} \\[6pt]
+\sqrt[n]{\sqrt[k]{a}} &= \sqrt[nk]{a}
+\end{align}
+
+% =====================================================================
+\section{Logaritmai}
+% =====================================================================
+
+Jei $\log_a b = c$, tai $a^c = b$ \quad ($a > 0$, $a \neq 1$, $b > 0$):
+
+\begin{tcolorbox}[colback=green!5!white, colframe=green!60!black, title=Logaritmų savybės]
+\begin{align}
+\log_a(bc)  &= \log_a b + \log_a c \\[6pt]
+\log_a\!\left(\frac{b}{c}\right) &= \log_a b - \log_a c \\[6pt]
+\log_a b^k  &= k\log_a b \\[6pt]
+\log_b c    &= \frac{\log_a c}{\log_a b} \quad \text{(perėjimo formulė)}
+\end{align}
+\end{tcolorbox}
+
+\begin{remark}
+Natūrinis logaritmas: $\ln x = \log_e x$, kur $e \approx 2{,}718$. \\
+Dešimtainis logaritmas: $\lg x = \log_{10} x$.
+\end{remark}
+
+% =====================================================================
+\section{Trigonometrija}
+% =====================================================================
+
+\subsection{Pagrindiniai sąryšiai}
+
+\begin{align}
+\sin^2\alpha + \cos^2\alpha &= 1 \\[6pt]
+\tg\alpha   &= \frac{\sin\alpha}{\cos\alpha} \\[6pt]
+\ctg\alpha  &= \frac{\cos\alpha}{\sin\alpha} \\[6pt]
+1 + \tg^2\alpha  &= \frac{1}{\cos^2\alpha} \\[6pt]
+1 + \ctg^2\alpha &= \frac{1}{\sin^2\alpha}
+\end{align}
+
+\subsection{Dvigubo kampo formulės}
+
+\begin{align}
+\sin 2\alpha &= 2\sin\alpha\cos\alpha \\[6pt]
+\cos 2\alpha &= \cos^2\alpha - \sin^2\alpha \\[6pt]
+\tg 2\alpha  &= \frac{2\tg\alpha}{1-\tg^2\alpha}
+\end{align}
+
+\subsection{Pusės kampo formulės}
+
+\begin{align}
+2\sin^2\alpha &= 1 - \cos 2\alpha \\[6pt]
+2\cos^2\alpha &= 1 + \cos 2\alpha
+\end{align}
+
+\subsection{Sumos ir skirtumo formulės}
+
+\begin{align}
+\sin(\alpha \pm \beta) &= \sin\alpha\cos\beta \pm \cos\alpha\sin\beta \\[6pt]
+\cos(\alpha \pm \beta) &= \cos\alpha\cos\beta \mp \sin\alpha\sin\beta \\[6pt]
+\tg(\alpha \pm \beta)  &= \frac{\tg\alpha \pm \tg\beta}{1 \mp \tg\alpha\tg\beta}
+\end{align}
+
+\subsection{Trigonometrinių funkcijų reikšmių lentelė}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$\alpha$ (laipsniais) & $0°$ & $30°$ & $45°$ & $60°$ & $90°$ \\
+\hline
+$\alpha$ (radianais)  & $0$ & $\dfrac{\pi}{6}$ & $\dfrac{\pi}{4}$ & $\dfrac{\pi}{3}$ & $\dfrac{\pi}{2}$ \\[8pt]
+\hline
+$\sin\alpha$ & $0$ & $\dfrac{1}{2}$ & $\dfrac{\sqrt{2}}{2}$ & $\dfrac{\sqrt{3}}{2}$ & $1$ \\[8pt]
+\hline
+$\cos\alpha$ & $1$ & $\dfrac{\sqrt{3}}{2}$ & $\dfrac{\sqrt{2}}{2}$ & $\dfrac{1}{2}$ & $0$ \\[8pt]
+\hline
+$\tg\alpha$  & $0$ & $\dfrac{\sqrt{3}}{3}$ & $1$ & $\sqrt{3}$ & $-$ \\[8pt]
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Trigonometrinės lygtys}
+
+\begin{tcolorbox}[colback=orange!5!white, colframe=orange!60!black, title=Trigonometrinių lygčių sprendiniai]
+\begin{align}
+\sin x = a \quad &\Rightarrow \quad x = (-1)^k \arcsin a + \pi k, \quad k \in \mathbb{Z},
+    \quad a \in [-1;\,1] \\[6pt]
+\cos x = a \quad &\Rightarrow \quad x = \pm\arccos a + 2\pi k, \quad k \in \mathbb{Z},
+    \quad a \in [-1;\,1] \\[6pt]
+\tg x = a  \quad &\Rightarrow \quad x = \arctg a + \pi k, \quad k \in \mathbb{Z},
+    \quad a \in \mathbb{R}
+\end{align}
+\end{tcolorbox}
+
+% =====================================================================
+\section{Sekos ir procentai}
+% =====================================================================
+
+\subsection{Aritmetinė progresija}
+
+Čia $a_1$ – pirmasis narys, $d$ – skirtumas, $n$ – nario eilės numeris,
+$S_n$ – pirmųjų $n$ narių suma.
+
+\begin{align}
+a_n &= a_1 + d(n-1) \\[6pt]
+d   &= a_{n+1} - a_n \\[6pt]
+S_n &= \frac{a_1 + a_n}{2} \cdot n = \frac{2a_1 + d(n-1)}{2} \cdot n
+\end{align}
+
+\subsection{Geometrinė progresija}
+
+Čia $b_1 \neq 0$ – pirmasis narys, $q \neq 0$ – vardiklis, $S_n$ – pirmųjų $n$ narių
+suma, $S$ – nykstamosios geometrinės progresijos suma.
+
+\begin{align}
+b_n &= b_1 \cdot q^{n-1} \\[6pt]
+q   &= \frac{b_{n+1}}{b_n} \\[6pt]
+S_n &= \frac{b_1(1 - q^n)}{1-q} = \frac{b_1 - q b_n}{1-q}, \quad q \neq 1 \\[6pt]
+S   &= \frac{b_1}{1-q}, \quad |q| < 1 \quad \text{(nykstamoji progresija)}
+\end{align}
+
+\subsection{Sudėtiniai procentai}
+
+\begin{tcolorbox}[colback=purple!5!white, colframe=purple!60!black, title=Sudėtinių procentų formulė]
+\[
+S_n = S_0 \left(1 + \frac{p}{100}\right)^n
+\]
+\end{tcolorbox}
+
+čia $S_0$ – pradinė reikšmė, $p$ – procentų skaičius, $n$ – laikotarpių skaičius.
+
+% =====================================================================
+\section{Planimetrinės figūros}
+% =====================================================================
+
+\subsection{Trikampis}
+
+Čia $a$, $b$, $c$ – kraštinių ilgiai; $A$, $B$, $C$ – prieš jas esančių kampų
+didumai; $p = \dfrac{a+b+c}{2}$ – pusperimetris; $r$ – įbrėžtinio,
+$R$ – apibrėžtinio apskritimo spindulys; $h_a$ – aukštinė į kraštinę $a$.
+
+\textbf{Kosinusų teorema:}
+\[
+a^2 = b^2 + c^2 - 2bc\cos A
+\]
+
+\textbf{Sinusų teorema:}
+\[
+\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C} = 2R
+\]
+
+\textbf{Trikampio plotas:}
+\[
+S = \frac{1}{2}ah_a = \frac{1}{2}ab\sin C
+  = \sqrt{p(p-a)(p-b)(p-c)}
+  = rp
+  = \frac{abc}{4R}
+\]
+
+\subsection{Skritulio išpjova}
+
+Čia $R$ – spindulio ilgis, $\alpha$ – centrinio kampo didumas laipsniais.
+
+\begin{align}
+S_{\text{išpj.}} &= \frac{\alpha}{360°}\pi R^2 \\[6pt]
+C_{\text{išpj.}} &= \frac{\alpha}{360°} \cdot 2\pi R
+\end{align}
+
+% =====================================================================
+\section{Erdvinės figūros}
+% =====================================================================
+
+\subsection{Ritinys}
+
+Čia $R$ – pagrindo spindulio ilgis, $H$ – aukštinės ilgis.
+\begin{align}
+S_{\text{šon.}} &= 2\pi R H \\[6pt]
+V &= \pi R^2 H
+\end{align}
+
+\subsection{Kūgis}
+
+Čia $R$ – pagrindo spindulio ilgis, $l$ – sudaromosios ilgis, $H$ – aukštinės ilgis.
+\begin{align}
+S_{\text{šon.}} &= \pi R l \\[6pt]
+V &= \frac{1}{3}\pi R^2 H
+\end{align}
+
+\subsection{Nupjautinis kūgis}
+
+Čia $R$ ir $r$ – pagrindų spindulių ilgiai, $l$ – sudaromosios ilgis, $H$ – aukštinės ilgis.
+\begin{align}
+S_{\text{šon.}} &= \pi(R + r)l \\[6pt]
+V &= \frac{\pi H}{3}(R^2 + Rr + r^2)
+\end{align}
+
+\subsection{Rutulys}
+
+Čia $R$ – spindulio ilgis.
+\begin{align}
+S &= 4\pi R^2 \\[6pt]
+V &= \frac{4}{3}\pi R^3
+\end{align}
+
+\subsection{Rutulio nuopjova}
+
+Čia $R$ – rutulio spindulio ilgis, $H$ – nuopjovos aukštis.
+\begin{align}
+S &= 2\pi R H \\[6pt]
+V &= \frac{\pi H^2(3R - H)}{3}
+\end{align}
+
+\subsection{Piramidė}
+
+Čia $S_{\text{pag.}}$ – pagrindo plotas, $H$ – aukštinės ilgis.
+\[
+V = \frac{1}{3} S_{\text{pag.}} \cdot H
+\]
+
+\subsection{Nupjautinė piramidė}
+
+Čia $S_1$, $S_2$ – pagrindų plotai, $H$ – aukštinės ilgis.
+\[
+V = \frac{H}{3}\!\left(S_1 + \sqrt{S_1 S_2} + S_2\right)
+\]
+
+% =====================================================================
+\section{Vektoriai}
+% =====================================================================
+
+\subsection{Vektoriaus ilgis erdvėje}
+
+Čia $\vec{a} = (x;\, y;\, z)$:
+\[
+|\vec{a}| = \sqrt{x^2 + y^2 + z^2}
+\]
+
+\subsection{Skaliarinė sandauga}
+
+Čia $\vec{a} = (x_1;\, y_1;\, z_1)$, $\vec{b} = (x_2;\, y_2;\, z_2)$,
+$\alpha$ – kampas tarp vektorių:
+\[
+\vec{a} \cdot \vec{b} = x_1 x_2 + y_1 y_2 + z_1 z_2 = |\vec{a}|\,|\vec{b}|\cos\alpha
+\]
+
+% =====================================================================
+\section{Išvestinės}
+% =====================================================================
+
+\subsection{Diferencijavimo taisyklės}
+
+Čia $u$ ir $v$ – diferencijuojamosios funkcijos, $c$ – konstanta.
+
+\begin{tcolorbox}[colback=red!5!white, colframe=red!60!black, title=Diferencijavimo taisyklės]
+\begin{align}
+(cu)'           &= cu' \\[4pt]
+(u \pm v)'      &= u' \pm v' \\[4pt]
+(uv)'           &= u'v + uv' \\[4pt]
+\left(\frac{u}{v}\right)' &= \frac{u'v - uv'}{v^2} \\[6pt]
+(x^n)'          &= nx^{n-1}
+\end{align}
+\end{tcolorbox}
+
+\subsection{Pagrindinių funkcijų išvestinės}
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Funkcija} $f(x)$ & \textbf{Išvestinė} $f'(x)$ \\
+\hline
+$x^n$          & $nx^{n-1}$ \\[4pt]
+\hline
+$\sqrt{x}$     & $\dfrac{1}{2\sqrt{x}}$ \\[8pt]
+\hline
+$a^x$          & $a^x \ln a$ \\[4pt]
+\hline
+$e^x$          & $e^x$ \\[4pt]
+\hline
+$\log_a x$     & $\dfrac{1}{x \ln a}$ \\[8pt]
+\hline
+$\ln x$        & $\dfrac{1}{x}$ \\[8pt]
+\hline
+$\sin x$       & $\cos x$ \\[4pt]
+\hline
+$\cos x$       & $-\sin x$ \\[4pt]
+\hline
+$\tg x$        & $\dfrac{1}{\cos^2 x}$ \\[8pt]
+\hline
+$\ctg x$       & $-\dfrac{1}{\sin^2 x}$ \\[8pt]
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Sudėtinės funkcijos išvestinė}
+
+Jei $h(x) = g(f(x))$, tai:
+\[
+h'(x) = g'(f(x)) \cdot f'(x)
+\]
+
+\subsection{Liestinės lygtis}
+
+Funkcijos $y = f(x)$ grafiko liestinės, liečiančios grafiką taške
+$\bigl(x_0;\, f(x_0)\bigr)$, lygtis:
+\[
+y = f(x_0) + f'(x_0)(x - x_0)
+\]
+čia $f'(x_0)$ – liestinės krypties koeficientas.
+
+% =====================================================================
+\section{Kombinatorika}
+% =====================================================================
+
+\begin{align}
+\text{Derinių skaičius:} \quad
+C_n^k &= C_n^{n-k} = \frac{n!}{k!\,(n-k)!} \\[10pt]
+\text{Gretinių skaičius:} \quad
+A_n^k &= \frac{n!}{(n-k)!}
+\end{align}
+
+\begin{remark}
+Pagal susitarimą $0! = 1$.
+\end{remark}
+
+% =====================================================================
+\section{Tikimybių teorija ir statistika}
+% =====================================================================
+
+\subsection{Atsitiktinio dydžio charakteristikos}
+
+Tegu atsitiktinis dydis $X$ įgyja reikšmes $x_1, x_2, \ldots, x_n$
+su atitinkamomis tikimybėmis $p_1, p_2, \ldots, p_n$.
+
+\textbf{Matematinė viltis:}
+\[
+EX = x_1 p_1 + x_2 p_2 + \cdots + x_n p_n
+\]
+
+\textbf{Dispersija:}
+\[
+DX = (x_1 - EX)^2 p_1 + (x_2 - EX)^2 p_2 + \cdots + (x_n - EX)^2 p_n
+\]
+
+\textbf{Standartinis nuokrypis:}
+\[
+\sigma = \sqrt{DX}
+\]
+
+\subsection{Bernulio formulė}
+
+Jei eksperimentas kartojamas $n$ kartų nepriklausomai, sėkmės tikimybė kiekviename
+bandyme lygi $p$ (nesėkmės $q = 1-p$), tai tikimybė gauti lygiai $k$ sėkmių:
+\[
+P(X = k) = C_n^k \, p^k \, q^{n-k}, \quad k = 0, 1, \ldots, n
+\]
+

@@ -1,0 +1,74 @@
+\documentclass[12pt,a4paper]{book}
+
+% XeLaTeX: Unicode natyviai, nereikia inputenc/fontenc
+\usepackage{fontspec}
+\usepackage{lmodern}
+\usepackage[lithuanian]{babel}
+
+% Matematika
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+
+% Lietuviški operatoriai
+\DeclareMathOperator{\tg}{tg}
+\DeclareMathOperator{\ctg}{ctg}
+\DeclareMathOperator{\arctg}{arctg}
+\DeclareMathOperator{\arcctg}{arcctg}
+
+% Kiti paketai
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+\usepackage{pgfplots}
+\usepackage{multirow}
+\pgfplotsset{compat=1.18}
+
+% Theorem environments
+\theoremstyle{definition}
+\newtheorem{definition}{Apibrėžimas}[chapter]
+\newtheorem{example}{Pavyzdys}[chapter]
+\newtheorem{exercise}{Uždavinys}[chapter]
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Teorema}[chapter]
+\newtheorem{lemma}{Lema}[chapter]
+\newtheorem{corollary}{Išvada}[chapter]
+
+\theoremstyle{remark}
+\newtheorem{remark}{Pastaba}[chapter]
+
+% Title information
+\title{Matematikos VBE II dalis\\12 klasė}
+\author{Matematikos bendruomenė}
+\date{\today}
+
+\begin{document}
+
+% Front matter
+\frontmatter
+\maketitle
+\tableofcontents
+
+% Main content
+\mainmatter
+
+\include{chapters/01_planimetrija}
+\include{chapters/02_logaritmai}
+\include{chapters/03_sekos}
+\include{chapters/04_lygtys}
+\include{chapters/05_moduliai}
+\include{chapters/06_trigonometrija}
+\include{chapters/07_ribos}
+\include{chapters/08_isvestine}
+\include{chapters/09_integralas}
+\include{chapters/10_vektoriai}
+\include{chapters/11_stereometrija}
+\include{chapters/12_stochastika}
+
+\appendix
+\include{chapters/A_formules}
+\include{chapters/B_uzduotys}
+
+\end{document}

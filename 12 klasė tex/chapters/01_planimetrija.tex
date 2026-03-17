@@ -1,0 +1,1767 @@
+%==========================================================
+% CHAPTER: Planimetrija
+%==========================================================
+\chapter{Planimetrija}
+
+\section{Trikampiai}
+
+Trikampis yra viena pagrindinių plokštumos geometrinių figūrų, turinti tris viršūnes,
+tris kraštines ir tris kampus. Šiame skyriuje nagrinėjamos esminės trikampio savybės,
+ploto formulės ir pagrindinės trigonometrinės teoremos, būtinos VBE II daliai.
+
+% -------------------------------------------------------
+\subsection{Trikampio savybės ir požymiai}
+% -------------------------------------------------------
+
+\begin{definition}
+\textbf{Trikampis} $ABC$ – tai figūra, sudaryta iš trijų taškų $A$, $B$, $C$,
+nepriklausančių vienai tiesei, ir trijų atkarpų $AB$, $BC$, $CA$, vadinamų
+\emph{kraštinėmis}. Taškai $A$, $B$, $C$ vadinami \emph{viršūnėmis}, o kampai
+$\alpha = \angle BAC$, $\beta = \angle ABC$, $\gamma = \angle BCA$ – \emph{vidiniais kampais}.
+\end{definition}
+
+\subsubsection*{Pagrindinės trikampio savybės}
+
+\begin{theorem}[Kampų suma]
+Bet kurio trikampio vidaus kampų suma lygi $180°$:
+\[
+\alpha + \beta + \gamma = 180°.
+\]
+\end{theorem}
+
+\begin{proof}
+Tegu $ABC$ – trikampis. Per viršūnę $B$ nubrėžkime tiesę $l$, lygiagrečią kraštinei $AC$.
+Lygiagrečioms tiesėms $l$ ir $AC$, kertamoms skersiniais $AB$ ir $BC$,
+kaitiniai kampai yra lygūs, todėl:
+\[
+\angle ABl_1 = \alpha, \quad \angle CBl_2 = \gamma.
+\]
+Tiesia linija sudaromas $180°$ kampas, todėl
+$\alpha + \beta + \gamma = 180°$. \qed
+\end{proof}
+
+\begin{corollary}
+Išorinis trikampio kampas lygus dviejų jam neištisinių vidaus kampų sumai:
+\[
+\delta = \alpha + \beta.
+\]
+\end{corollary}
+
+\subsubsection*{Trikampių rūšys}
+
+Pagal \textbf{kampus}:
+\begin{itemize}
+  \item \textit{Smailakampis} – visi trys kampai smailūs ($< 90°$).
+  \item \textit{Stačiakampis} – vienas kampas status ($= 90°$).
+  \item \textit{Bukakampis} – vienas kampas bukas ($> 90°$).
+\end{itemize}
+
+Pagal \textbf{kraštines}:
+\begin{itemize}
+  \item \textit{Lygiakraštis} – visos trys kraštinės lygios.
+  \item \textit{Lygiašonis} – dvi kraštinės lygios.
+  \item \textit{Įvairiakraštis} – visos kraštinės skirtingos.
+\end{itemize}
+
+\subsubsection*{Trikampių lygybė}
+
+\begin{definition}
+Du trikampiai vadinami \textbf{lygiais}, jei jų atitinkamos kraštinės ir atitinkami kampai
+yra lygūs.
+\end{definition}
+
+\begin{theorem}[Trikampių lygybės požymiai]
+Du trikampiai yra lygūs, jeigu tenkinama viena iš šių sąlygų:
+\begin{enumerate}
+  \item \textbf{(KKK)} Visos trys atitinkamos kraštinės yra lygios:
+        $a = a'$, $b = b'$, $c = c'$.
+  \item \textbf{(KKa)} Dvi kraštinės ir tarp jų esantis kampas yra lygūs:
+        $a = a'$, $b = b'$, $\gamma = \gamma'$.
+  \item \textbf{(KaK)} Viena kraštinė ir prie jos esantys du kampai yra lygūs:
+        $c = c'$, $\alpha = \alpha'$, $\beta = \beta'$.
+\end{enumerate}
+\end{theorem}
+
+\begin{tcolorbox}[colback=blue!5!white, colframe=blue!60!black, title=Stačiakampio trikampio lygybės požymis]
+Stačiakampiai trikampiai yra lygūs, jeigu jų statiniai yra lygūs arba
+įžambinė ir vienas statinis yra lygūs.
+\end{tcolorbox}
+
+\subsubsection*{Trikampių panašumas}
+
+\begin{definition}
+Du trikampiai vadinami \textbf{panašiais} ($\triangle ABC \sim \triangle A'B'C'$),
+jeigu jų atitinkami kampai yra lygūs ir atitinkamų kraštinių santykiai lygūs:
+\[
+\frac{a}{a'} = \frac{b}{b'} = \frac{c}{c'} = k,
+\]
+kur $k$ – \emph{panašumo koeficientas}.
+\end{definition}
+
+\begin{theorem}[Trikampių panašumo požymiai]
+Du trikampiai yra panašūs, jeigu:
+\begin{enumerate}
+  \item \textbf{(KK)} Du atitinkami kampai yra lygūs.
+  \item \textbf{(KKK)} Trys atitinkamų kraštinių santykiai yra lygūs.
+  \item \textbf{(KKa)} Dvi kraštinių poros santykiai lygūs ir tarp jų esantys
+        kampai lygūs.
+\end{enumerate}
+\end{theorem}
+
+\begin{remark}
+Panašių figūrų perimetrų santykis lygus panašumo koeficientui $k$,
+o plotų santykis lygus $k^2$.
+\end{remark}
+
+\subsubsection*{Svarbūs trikampio elementai}
+
+\begin{itemize}
+  \item \textbf{Aukštinė} – atkarpa iš viršūnės, statmena priešingai kraštinei.
+        Trys aukštinės kertasi viename taške – \emph{ortocentre} $H$.
+  \item \textbf{Mediana} – atkarpa, jungianti viršūnę su priešingos kraštinės viduriu.
+        Trys medianos kertasi \emph{sunkio centre} $G$, kuris dalija kiekvieną medianą
+        santykiu $2:1$ nuo viršūnės.
+  \item \textbf{Pusiaukampinė} – spindulys, dalijantis kampą per pusę.
+        Trys pusiaukampinės kertasi \emph{įbrėžtinio apskritimo centre} $I$.
+  \item \textbf{Vidurio statmuo} – statmuo kraštinės vidurio taške.
+        Trys vidurio statmenys kertasi \emph{apibrėžtinio apskritimo centre} $O$.
+\end{itemize}
+
+\begin{theorem}[Pitagoro teorema]
+Stačiakampiame trikampyje įžambinės ilgio kvadratas lygus abiejų statinių ilgių
+kvadratų sumai:
+\[
+c^2 = a^2 + b^2,
+\]
+kur $c$ – įžambinė, $a$ ir $b$ – statiniai.
+\end{theorem}
+
+\begin{example}
+Stačiakampiame trikampyje statiniai yra $a = 3$ cm ir $b = 4$ cm. Rasti įžambinę.
+\[
+c = \sqrt{a^2 + b^2} = \sqrt{9 + 16} = \sqrt{25} = 5 \text{ cm}.
+\]
+\end{example}
+
+\begin{exercise}
+Trikampio $ABC$ kampai yra $\alpha = 47°$ ir $\beta = 63°$. Raskite trečiąjį kampą $\gamma$.
+\end{exercise}
+
+% -------------------------------------------------------
+\subsection{Trikampio plotas}
+% -------------------------------------------------------
+
+\subsubsection*{Pagrindinės ploto formulės}
+
+Trikampio plotui apskaičiuoti naudojamos kelios formulės, priklausomai nuo žinomų elementų.
+
+\begin{theorem}[Pagrindinė ploto formulė]
+Trikampio plotas lygus pusės pagrindo ir atitinkamos aukštinės sandaugai:
+\[
+S = \frac{1}{2} \cdot a \cdot h_a,
+\]
+kur $a$ – pasirinkta kraštinė (pagrindas), $h_a$ – aukštinė į tą kraštinę.
+\end{theorem}
+
+\begin{theorem}[Plotas per dvi kraštines ir kampą]
+Jeigu žinomos dvi trikampio kraštinės $b$, $c$ ir tarp jų esantis kampas $\alpha$, tai:
+\[
+\boxed{S = \frac{1}{2} \cdot b \cdot c \cdot \sin\alpha.}
+\]
+\end{theorem}
+
+\begin{proof}
+Trikampyje $ABC$ nubrėžkime aukštinę $h$ iš viršūnės $C$ į kraštinę $AB = c$.
+Tuomet $h = b \sin\alpha$ (iš stačiakampio trikampio apibrėžimo).
+Įstatę į pagrindinę formulę:
+\[
+S = \frac{1}{2} \cdot c \cdot h = \frac{1}{2} \cdot c \cdot b\sin\alpha = \frac{1}{2}bc\sin\alpha. \quad \qed
+\]
+\end{proof}
+
+\begin{tcolorbox}[colback=green!5!white, colframe=green!60!black, title=Visos trys kraštinių–kampo formulės]
+\[
+S = \frac{1}{2} a b \sin\gamma = \frac{1}{2} b c \sin\alpha = \frac{1}{2} a c \sin\beta.
+\]
+\end{tcolorbox}
+
+\subsubsection*{Herono formulė}
+
+\begin{theorem}[Herono formulė]
+Jeigu žinomos visos trys trikampio kraštinės $a$, $b$, $c$, tai plotas:
+\[
+S = \sqrt{p(p-a)(p-b)(p-c)},
+\]
+kur $p = \dfrac{a+b+c}{2}$ – \emph{pusperimetris}.
+\end{theorem}
+
+\begin{example}
+Raskite trikampio, kurio kraštinės $a = 5$, $b = 6$, $c = 7$, plotą.
+
+Pusperimetris: $p = \dfrac{5+6+7}{2} = 9$.
+\[
+S = \sqrt{9 \cdot (9-5)(9-6)(9-7)} = \sqrt{9 \cdot 4 \cdot 3 \cdot 2} = \sqrt{216} = 6\sqrt{6} \approx 14{,}70 \text{ cm}^2.
+\]
+\end{example}
+
+\subsubsection*{Plotas per įbrėžtinį ir apibrėžtinį apskritimus}
+
+\begin{theorem}
+Jeigu $r$ – įbrėžtinio apskritimo spindulys, o $p$ – pusperimetris, tai:
+\[
+S = p \cdot r.
+\]
+\end{theorem}
+
+\begin{theorem}
+Jeigu $R$ – apibrėžtinio apskritimo spindulys, tai:
+\[
+S = \frac{abc}{4R}.
+\]
+\end{theorem}
+
+\begin{exercise}
+Lygiašonio trikampio šoninė kraštinė $b = 10$ cm, pagrindo kampas $\beta = 40°$.
+Apskaičiuokite trikampio plotą.
+\end{exercise}
+
+\begin{exercise}
+Trikampio kraštinės yra $a = 8$, $b = 15$, $c = 17$. Patikrinkite, ar trikampis stačiakampis,
+ir apskaičiuokite jo plotą abiem būdais: pagrindinę formule ir Herono formule.
+\end{exercise}
+
+% -------------------------------------------------------
+\subsection{Sinusų ir kosinusų teoremos}
+% -------------------------------------------------------
+
+Sinusų ir kosinusų teoremos leidžia spręsti \emph{bet kurį} trikampį –
+t.\,y. rasti nežinomas kraštines ir kampus, žinant pakankamai pradinių duomenų.
+
+\subsubsection*{Sinusų teorema}
+
+\begin{theorem}[Sinusų teorema]
+Trikampio kraštinių ilgiai proporcingi prieš jas esančių kampų sinusams, o šis santykis
+lygus apibrėžtinio apskritimo skersmeniui $2R$:
+\[
+\boxed{\frac{a}{\sin\alpha} = \frac{b}{\sin\beta} = \frac{c}{\sin\gamma} = 2R,}
+\]
+kur $R$ – apibrėžtinio apskritimo spindulys, $a, b, c$ – kraštinės,
+$\alpha, \beta, \gamma$ – jiems priešingi kampai.
+\end{theorem}
+
+\begin{proof}
+Tegu $ABC$ – smailakampis trikampis ir $O$ – jo apibrėžtinio apskritimo centras,
+$R$ – spindulys. Nubrėžkime skersmenį $BD$ per viršūnę $B$.
+
+Kampas $\angle BAC = \alpha$ yra įbrėžtinis kampas, o $\angle BDC$ – taip pat
+įbrėžtinis kampas, remiasi tą pačią lanką $BC$, todėl $\angle BDC = \alpha$.
+
+Trikampyje $BDC$: $\angle BCD = 90°$ (kaip kampas, įbrėžtas į pusapskritimį), todėl:
+\[
+\sin\alpha = \sin(\angle BDC) = \frac{BC}{BD} = \frac{a}{2R}
+\implies \frac{a}{\sin\alpha} = 2R.
+\]
+Analogiškai $\dfrac{b}{\sin\beta} = 2R$ ir $\dfrac{c}{\sin\gamma} = 2R$. \qed
+\end{proof}
+
+\subsubsection*{Sinusų teoremos taikymas}
+
+Sinusų teorema taikoma, kai žinoma:
+\begin{enumerate}
+  \item Dvi kraštinės ir vienam iš jų priešingas kampas (\textbf{KKa} atvejis).
+  \item Viena kraštinė ir du kampai (\textbf{KaK} arba \textbf{KKa} atvejis).
+\end{enumerate}
+
+\begin{example}
+Trikampyje $ABC$: $a = 7$ cm, $\alpha = 50°$, $\beta = 70°$.
+Raskite kraštinę $b$ ir apibrėžtinio apskritimo spindulį $R$.
+
+\textit{Sprendimas.}
+\[
+\frac{a}{\sin\alpha} = \frac{b}{\sin\beta}
+\implies b = \frac{a \cdot \sin\beta}{\sin\alpha}
+= \frac{7 \cdot \sin 70°}{\sin 50°}
+= \frac{7 \cdot 0{,}9397}{0{,}7660}
+\approx 8{,}58 \text{ cm}.
+\]
+\[
+2R = \frac{a}{\sin\alpha} = \frac{7}{\sin 50°} \approx \frac{7}{0{,}7660} \approx 9{,}14 \text{ cm},
+\quad R \approx 4{,}57 \text{ cm}.
+\]
+\end{example}
+
+\subsubsection*{Kosinusų teorema}
+
+\begin{theorem}[Kosinusų teorema]
+Trikampio kraštinės ilgio kvadratas lygus kitų dviejų kraštinių ilgių kvadratų sumai
+minus dviguba tų kraštinių ilgių ir tarp jų esančio kampo kosinuso sandauga:
+\[
+\boxed{a^2 = b^2 + c^2 - 2bc\cos\alpha.}
+\]
+Analogiškai:
+\[
+b^2 = a^2 + c^2 - 2ac\cos\beta, \qquad
+c^2 = a^2 + b^2 - 2ab\cos\gamma.
+\]
+\end{theorem}
+
+\begin{proof}
+Tegu trikampyje $ABC$ aukštinė $h$ nubrėžta iš viršūnės $C$ į kraštinę $AB$.
+Pažymėkime $BD = x$, tada $AD = c - x$. Pagal Pitagoro teoremą:
+\[
+h^2 = a^2 - x^2 \quad \text{ir} \quad h^2 = b^2 - (c-x)^2.
+\]
+Iš čia:
+\[
+a^2 - x^2 = b^2 - c^2 + 2cx - x^2
+\implies a^2 = b^2 - c^2 + 2cx + x^2... 
+\]
+Iš stačiakampio trikampio $ABС$: $x = c - b\cos\alpha$ ... tačiau paprasčiau:
+iš $\triangle ABС$ aukštinė $h = b\sin\alpha$, o $BD = b\cos\alpha$, todėl
+$AD = c - b\cos\alpha$. Pagal Pitagoro teoremą $\triangle ACD$:
+\[
+a^2 = h^2 + (c - b\cos\alpha)^2
+= b^2\sin^2\alpha + c^2 - 2bc\cos\alpha + b^2\cos^2\alpha.
+\]
+Kadangi $\sin^2\alpha + \cos^2\alpha = 1$:
+\[
+a^2 = b^2 + c^2 - 2bc\cos\alpha. \qquad \qed
+\]
+\end{proof}
+
+\begin{remark}
+Kai $\alpha = 90°$, gauname $\cos 90° = 0$, todėl $a^2 = b^2 + c^2$ –
+tai \textbf{Pitagoro teorema}. Taigi kosinusų teorema yra Pitagoro teoremos apibendrinimas.
+\end{remark}
+
+\subsubsection*{Kosinusų teoremos taikymas}
+
+Kosinusų teorema taikoma, kai žinoma:
+\begin{enumerate}
+  \item Trys kraštinės (\textbf{KKK} atvejis) – ieškome kampų.
+  \item Dvi kraštinės ir tarp jų esantis kampas (\textbf{KKa} atvejis) – ieškome trečiosios kraštinės.
+\end{enumerate}
+
+Kampams rasti iš kosinusų teoremos išreiškiame:
+\[
+\cos\alpha = \frac{b^2 + c^2 - a^2}{2bc}, \quad
+\cos\beta = \frac{a^2 + c^2 - b^2}{2ac}, \quad
+\cos\gamma = \frac{a^2 + b^2 - c^2}{2ab}.
+\]
+
+\begin{example}
+Trikampio kraštinės $a = 5$, $b = 7$, $c = 8$. Raskite kampą $\alpha$.
+\[
+\cos\alpha = \frac{b^2 + c^2 - a^2}{2bc}
+= \frac{49 + 64 - 25}{2 \cdot 7 \cdot 8}
+= \frac{88}{112}
+= \frac{11}{14} \approx 0{,}7857.
+\]
+\[
+\alpha = \arccos(0{,}7857) \approx 38{,}2°.
+\]
+\end{example}
+
+\begin{example}
+Trikampyje $ABC$: $b = 6$ cm, $c = 9$ cm, $\alpha = 120°$. Raskite kraštinę $a$.
+\[
+a^2 = b^2 + c^2 - 2bc\cos\alpha
+= 36 + 81 - 2 \cdot 6 \cdot 9 \cdot \cos 120°
+= 117 - 108 \cdot \left(-\frac{1}{2}\right)
+= 117 + 54 = 171.
+\]
+\[
+a = \sqrt{171} = 3\sqrt{19} \approx 13{,}08 \text{ cm}.
+\]
+\end{example}
+
+\subsubsection*{Teoremų taikymo pasirinkimas}
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Žinomi elementai} & \textbf{Taikoma teorema} & \textbf{Atvejis} \\
+\hline
+Dvi kraštinės + tarp jų kampas & Kosinusų & KKa \\
+Trys kraštinės & Kosinusų & KKK \\
+Viena kraštinė + du kampai & Sinusų & KaK \\
+Dvi kraštinės + priešingas kampas & Sinusų & KKa \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{exercise}
+Orientaciniame žaidime reikia pasiekti tašką $C$. Žinoma, kad $|AB| = 1{,}2$ km,
+$\angle BAC = 38°$ ir $\angle ABC = 75°$. Apskaičiuokite atstumus $|AC|$ ir $|BC|$.
+\end{exercise}
+
+\begin{exercise}
+Lygiagretainio kraštinės $a = 5$ cm ir $b = 8$ cm, o vienas kampas $\varphi = 60°$.
+Apskaičiuokite abiejų įstrižainių ilgius.
+
+\textit{Užuomina:} Lygiagretainio įstrižainėse pasinaudokite kosinusų teorema,
+atsižvelgdami į tai, kad gretimi lygiagretainio kampai sudaro $180°$.
+\end{exercise}
+
+\begin{tcolorbox}[colback=yellow!10!white, colframe=orange!80!black, title=VBE užduočių tipai – trikampiai]
+\begin{itemize}
+  \item Rasti nežinomą kraštinę arba kampą, taikant sinusų ar kosinusų teoremą.
+  \item Apskaičiuoti trikampio plotą, žinant dvi kraštines ir kampą.
+  \item Spręsti uždavinius apie apibrėžtinį arba įbrėžtinį apskritimą.
+  \item Praktiniai uždaviniai: atstumai, aukščiai, orientavimasis.
+\end{itemize}
+\end{tcolorbox}
+
+\section{Keturkampiai}
+
+Keturkampis – tai daugiakampis, turintis keturias kraštines, keturias viršūnes ir keturis kampus. Keturkampio kampų suma lygi $360°$. Šiame skyriuje nagrinėjami svarbiausi specialieji keturkampiai: lygiagretainis ir jo atvejai (stačiakampis, rombas, kvadratas) bei trapecija.
+
+% -------------------------------------------------------
+\subsection{Lygiagretainis, stačiakampis, rombas, kvadratas}
+% -------------------------------------------------------
+
+\begin{definition}[Lygiagretainis]
+\textbf{Lygiagretainis} – tai keturkampis, kurio priešingosios kraštinės yra lygiagrečios poromis:
+\[
+AB \parallel CD \quad \text{ir} \quad BC \parallel AD.
+\]
+\end{definition}
+
+\subsubsection*{Lygiagretainio savybės}
+
+\begin{theorem}[Lygiagretainio savybės]
+Lygiagretainiui $ABCD$ galioja šios savybės:
+\begin{enumerate}
+    \item Priešingosios kraštinės yra lygios: $AB = CD$, $\; BC = AD$.
+    \item Priešingieji kampai yra lygūs: $\angle A = \angle C$, $\; \angle B = \angle D$.
+    \item Gretimų kampų suma lygi $180°$: $\angle A + \angle B = 180°$.
+    \item Įstrižainės susikerta ir susikirtimo taške vieną kitą dalija pusiau:
+    \[
+    AO = OC, \quad BO = OD,
+    \]
+    kur $O$ – įstrižainių susikirtimo taškas.
+    \item Įstrižainių kvadratų suma lygi kraštinių kvadratų sumai:
+    \[
+    d_1^2 + d_2^2 = 2(a^2 + b^2).
+    \]
+\end{enumerate}
+\end{theorem}
+
+\begin{remark}
+Norint įrodyti, kad keturkampis yra lygiagretainis, pakanka patikrinti \emph{vieną} iš šių požymių: priešingos kraštinės lygios, priešingi kampai lygūs, įstrižainės dalija viena kitą pusiau, arba dvi priešingos kraštinės yra tuo pačiu metu lygios ir lygiagrečios.
+\end{remark}
+
+\subsubsection*{Lygiagretainio plotas ir perimetras}
+
+Lygiagretainio \textbf{aukštinė} $h$ – tai statmuo, nuleistas iš vienos kraštinės į priešingą (arba jos tęsinį).
+
+\begin{tcolorbox}[colback=blue!5!white, colframe=blue!60!black, title=Lygiagretainio ploto formulės]
+\[
+S = a \cdot h_a = b \cdot h_b = ab\sin\alpha,
+\]
+kur $a$, $b$ – lygiagretainio kraštinės, $h_a$ – į kraštinę $a$ nuleista aukštinė, $\alpha$ – kampas tarp gretimų kraštinių.
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=green!5!white, colframe=green!60!black, title=Lygiagretainio perimetras]
+\[
+P = 2(a + b).
+\]
+\end{tcolorbox}
+
+\begin{example}
+Lygiagretainio kraštinės $a = 8$ cm ir $b = 5$ cm, kampas tarp jų $\alpha = 30°$. Raskite lygiagretainio plotą.
+
+\textbf{Sprendimas.}
+\[
+S = ab\sin\alpha = 8 \cdot 5 \cdot \sin 30° = 40 \cdot \frac{1}{2} = 20 \text{ cm}^2.
+\]
+\end{example}
+
+\begin{exercise}
+Lygiagretainio plotas $S = 36$ cm$^2$, viena kraštinė $a = 9$ cm. Raskite į šią kraštinę nuleistos aukštinės ilgį.
+\end{exercise}
+
+% -------------------------------------------------------
+\subsubsection*{Stačiakampis}
+
+\begin{definition}[Stačiakampis]
+\textbf{Stačiakampis} – tai lygiagretainis, kurio visi kampai yra tiesieji ($90°$).
+\end{definition}
+
+Stačiakampis paveldi visas lygiagretainio savybes, tačiau turi ir papildomų:
+
+\begin{theorem}[Stačiakampio savybės]
+\begin{enumerate}
+    \item Visi keturi kampai lygūs $90°$.
+    \item Įstrižainės yra lygios: $d_1 = d_2$.
+    \item Įstrižainės susikerta ir dalija viena kitą pusiau, todėl kiekviena iš jų yra lygi pusei kitos.
+    \item Įstrižainės ilgis (iš Pitagoro teoremos):
+    \[
+    d = \sqrt{a^2 + b^2}.
+    \]
+\end{enumerate}
+\end{theorem}
+
+\begin{tcolorbox}[colback=blue!5!white, colframe=blue!60!black, title=Stačiakampio formulės]
+\[
+S = a \cdot b, \qquad P = 2(a+b), \qquad d = \sqrt{a^2 + b^2}.
+\]
+\end{tcolorbox}
+
+\begin{example}
+Stačiakampio kraštinės $a = 6$ cm ir $b = 8$ cm. Raskite jo įstrižainės ilgį ir plotą.
+
+\textbf{Sprendimas.}
+\[
+d = \sqrt{6^2 + 8^2} = \sqrt{36 + 64} = \sqrt{100} = 10 \text{ cm}.
+\]
+\[
+S = 6 \cdot 8 = 48 \text{ cm}^2.
+\]
+\end{example}
+
+\begin{exercise}
+Stačiakampio plotas $S = 60$ cm$^2$, o viena kraštinė $a = 12$ cm. Raskite jo perimetrą ir įstrižainės ilgį.
+\end{exercise}
+
+% -------------------------------------------------------
+\subsubsection*{Rombas}
+
+\begin{definition}[Rombas]
+\textbf{Rombas} – tai lygiagretainis, kurio visos keturios kraštinės yra lygios:
+\[
+AB = BC = CD = DA = a.
+\]
+\end{definition}
+
+\begin{theorem}[Rombo savybės]
+\begin{enumerate}
+    \item Visos kraštinės lygios: $a = b$.
+    \item Priešingi kampai lygūs: $\angle A = \angle C$, $\; \angle B = \angle D$.
+    \item Įstrižainės yra statmenos viena kitai: $d_1 \perp d_2$.
+    \item Įstrižainės dalija kampo pusiaukampinėmis pusiau.
+    \item Ryšys tarp kraštinės ir įstrižainių (iš Pitagoro teoremos):
+    \[
+    a^2 = \left(\frac{d_1}{2}\right)^2 + \left(\frac{d_2}{2}\right)^2 \implies d_1^2 + d_2^2 = 4a^2.
+    \]
+\end{enumerate}
+\end{theorem}
+
+\begin{tcolorbox}[colback=blue!5!white, colframe=blue!60!black, title=Rombo ploto formulės]
+\[
+S = a^2 \sin\alpha = a \cdot h = \frac{d_1 \cdot d_2}{2},
+\]
+kur $\alpha$ – rombo kampas, $h$ – aukštinė, $d_1$, $d_2$ – įstrižainių ilgiai.
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=green!5!white, colframe=green!60!black, title=Rombo perimetras]
+\[
+P = 4a.
+\]
+\end{tcolorbox}
+
+\begin{example}
+Rombo įstrižainės $d_1 = 10$ cm ir $d_2 = 24$ cm. Raskite rombo kraštinę ir plotą.
+
+\textbf{Sprendimas.} Kadangi įstrižainės statmenos ir dalija viena kitą pusiau:
+\[
+a = \sqrt{\left(\frac{d_1}{2}\right)^2 + \left(\frac{d_2}{2}\right)^2} = \sqrt{5^2 + 12^2} = \sqrt{25 + 144} = \sqrt{169} = 13 \text{ cm}.
+\]
+\[
+S = \frac{d_1 \cdot d_2}{2} = \frac{10 \cdot 24}{2} = 120 \text{ cm}^2.
+\]
+\end{example}
+
+\begin{exercise}
+Rombo kraštinė $a = 5$ cm, o vienas jo kampas lygus $120°$. Raskite rombo plotą ir įstrižainių ilgius.
+\end{exercise}
+
+% -------------------------------------------------------
+\subsubsection*{Kvadratas}
+
+\begin{definition}[Kvadratas]
+\textbf{Kvadratas} – tai stačiakampis, kurio visos kraštinės lygios, arba, ekvivalenčiai, rombas, kurio visi kampai tiesieji.
+\end{definition}
+
+Kvadratas yra ir stačiakampis, ir rombas vienu metu, todėl pasižymi visomis abiejų figūrų savybėmis:
+
+\begin{theorem}[Kvadrato savybės]
+\begin{enumerate}
+    \item Visos kraštinės lygios: $AB = BC = CD = DA = a$.
+    \item Visi kampai lygūs $90°$.
+    \item Įstrižainės lygios, statmenos ir dalija viena kitą pusiau.
+    \item Įstrižainės dalija kampus $45°$ kampais.
+    \item Įstrižainės ilgis: $d = a\sqrt{2}$.
+\end{enumerate}
+\end{theorem}
+
+\begin{tcolorbox}[colback=blue!5!white, colframe=blue!60!black, title=Kvadrato formulės]
+\[
+S = a^2, \qquad P = 4a, \qquad d = a\sqrt{2}.
+\]
+\end{tcolorbox}
+
+\begin{example}
+Kvadrato įstrižainė $d = 6\sqrt{2}$ cm. Raskite jo plotą ir perimetrą.
+
+\textbf{Sprendimas.} Iš $d = a\sqrt{2}$:
+\[
+a = \frac{d}{\sqrt{2}} = \frac{6\sqrt{2}}{\sqrt{2}} = 6 \text{ cm}.
+\]
+\[
+S = a^2 = 36 \text{ cm}^2, \qquad P = 4 \cdot 6 = 24 \text{ cm}.
+\]
+\end{example}
+
+\begin{exercise}
+Kvadrato plotas $S = 49$ cm$^2$. Raskite jo perimetrą ir įstrižainės ilgį.
+\end{exercise}
+
+% -------------------------------------------------------
+\subsubsection*{Specialiųjų lygiagretainių palyginimas}
+
+Žemiau pateikiama keturkampių hierarchija ir pagrindinių formulių suvestinė:
+
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Savybė} & \textbf{Lygiagretainis} & \textbf{Stačiakampis} & \textbf{Rombas} & \textbf{Kvadratas} \\
+\hline
+Priešingos kraštinės lygios    & \checkmark & \checkmark & \checkmark & \checkmark \\
+Visos kraštinės lygios         &            &            & \checkmark & \checkmark \\
+Visi kampai $90°$              &            & \checkmark &            & \checkmark \\
+Įstrižainės lygios             &            & \checkmark &            & \checkmark \\
+Įstrižainės statmenos          &            &            & \checkmark & \checkmark \\
+Įstrižainės dalija pusiau      & \checkmark & \checkmark & \checkmark & \checkmark \\
+\hline
+\textbf{Plotas}                & $ab\sin\alpha$ & $ab$ & $\dfrac{d_1 d_2}{2}$ & $a^2$ \\
+\hline
+\textbf{Perimetras}            & $2(a+b)$   & $2(a+b)$   & $4a$       & $4a$  \\
+\hline
+\end{tabular}
+\end{center}
+
+% -------------------------------------------------------
+\subsection{Trapecija}
+% -------------------------------------------------------
+
+\begin{definition}[Trapecija]
+\textbf{Trapecija} – tai keturkampis, kurio \emph{tik} dvi priešingosios kraštinės yra lygiagrečios. Lygiagrečiosios kraštinės vadinamos \textbf{pagrindais} ($a$ ir $b$, kur $a > b$), o kitos dvi – \textbf{šoninėmis kraštinėmis} ($c$ ir $d$).
+\end{definition}
+
+\subsubsection*{Trapecijos rūšys}
+
+\begin{enumerate}
+    \item \textbf{Lygiašonė trapecija} – šoninės kraštinės lygios: $c = d$. Jos kampai prie pagrindo lygūs, o įstrižainės lygios: $d_1 = d_2$.
+    \item \textbf{Stačioji trapecija} – viena šoninė kraštinė statmena pagrindams (ji yra kartu ir aukštinė).
+    \item \textbf{Bendrosios rūšies trapecija} – nei lygiašonė, nei stačioji.
+\end{enumerate}
+
+\subsubsection*{Trapecijos savybės}
+
+\begin{theorem}[Trapecijos savybės]
+\begin{enumerate}
+    \item Kampų, esančių prie tos pačios šoninės kraštinės, suma lygi $180°$:
+    \[
+    \angle A + \angle B = 180°, \quad \angle C + \angle D = 180°.
+    \]
+    \item \textbf{Vidurio linija} – atkarpa, jungianti šoninių kraštinių vidurius. Ji yra lygiagreti pagrindams ir lygi jų sumos pusei:
+    \[
+    m = \frac{a + b}{2}.
+    \]
+    \item Lygiašonės trapecijos įstrižainės lygios: $d_1 = d_2$.
+    \item Lygiašonės trapecijos kampai prie to paties pagrindo yra lygūs.
+\end{enumerate}
+\end{theorem}
+
+\subsubsection*{Trapecijos aukštinė}
+
+Trapecijos \textbf{aukštinė} $h$ – tai statmuo, nuleistas iš vieno pagrindo į kitą.
+
+\begin{remark}
+Stačiojoje trapecijoje aukštinė sutampa su viena iš šoninių kraštinių. Lygiašonėje trapecijoje aukštinės pėdos nuo viršūnių yra vienodai nutolusios nuo kraštinių.
+\end{remark}
+
+\subsubsection*{Trapecijos plotas ir perimetras}
+
+\begin{tcolorbox}[colback=blue!5!white, colframe=blue!60!black, title=Trapecijos ploto formulės]
+\[
+S = \frac{a+b}{2} \cdot h = m \cdot h,
+\]
+kur $a$ ir $b$ – pagrindų ilgiai, $h$ – aukštinė, $m = \dfrac{a+b}{2}$ – vidurio linija.
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=green!5!white, colframe=green!60!black, title=Trapecijos perimetras]
+\[
+P = a + b + c + d,
+\]
+kur $a$, $b$ – pagrindai, $c$, $d$ – šoninės kraštinės.
+\end{tcolorbox}
+
+\subsubsection*{Lygiašonės trapecijos šoninė kraštinė}
+
+Jeigu lygiašonės trapecijos pagrindai yra $a$ ir $b$ ($a > b$) ir aukštinė $h$, tai šoninę kraštinę $c$ galima rasti iš Pitagoro teoremos:
+\[
+c = \sqrt{h^2 + \left(\frac{a-b}{2}\right)^2}.
+\]
+
+\begin{example}
+Trapecijos pagrindai $a = 14$ cm ir $b = 6$ cm, aukštinė $h = 5$ cm. Raskite trapecijos plotą ir vidurio liniją.
+
+\textbf{Sprendimas.}
+\[
+m = \frac{a+b}{2} = \frac{14+6}{2} = 10 \text{ cm}.
+\]
+\[
+S = m \cdot h = 10 \cdot 5 = 50 \text{ cm}^2.
+\]
+Arba tiesiogiai:
+\[
+S = \frac{a+b}{2} \cdot h = \frac{14+6}{2} \cdot 5 = 50 \text{ cm}^2.
+\]
+\end{example}
+
+\begin{example}
+Lygiašonės trapecijos pagrindai $a = 10$ cm ir $b = 4$ cm, šoninė kraštinė $c = 5$ cm. Raskite trapecijos plotą.
+
+\textbf{Sprendimas.} Pirmiausia randame aukštinę. Nuleidę aukštines iš trumpesnio pagrindo galų, gausime du stačiuosius trikampius, kurių vienas statinis yra $\dfrac{a-b}{2} = \dfrac{10-4}{2} = 3$ cm, o įžambinė $c = 5$ cm. Tada:
+\[
+h = \sqrt{c^2 - \left(\frac{a-b}{2}\right)^2} = \sqrt{25 - 9} = \sqrt{16} = 4 \text{ cm}.
+\]
+\[
+S = \frac{a+b}{2} \cdot h = \frac{10+4}{2} \cdot 4 = 7 \cdot 4 = 28 \text{ cm}^2.
+\]
+\end{example}
+
+\begin{exercise}
+Trapecijos pagrindai $a = 20$ cm ir $b = 12$ cm, o šoninės kraštinės $c = 10$ cm ir $d = 6$ cm. Raskite trapecijos perimetrą. Ar ši trapecija yra lygiašonė?
+\end{exercise}
+
+\begin{exercise}
+Lygiašonės trapecijos plotas $S = 80$ cm$^2$, vidurio linija $m = 10$ cm. Raskite trapecijos aukštinę.
+\end{exercise}
+
+\section{Apskritimas ir skritulys}
+
+\subsection{Apskritimo ir skritulio savybės}
+
+\begin{definition}
+\textbf{Apskritimas} – tai plokštumos taškų aibė, nutolusių nuo duotojo taško (centro) vienodu atstumu $r$, vadinamu \textbf{spinduliu}.
+\end{definition}
+
+\begin{definition}
+\textbf{Skritulys} – tai plokštumos dalis (taškų aibė), apribota apskritimu. Skritulį sudaro visi taškai, nutolę nuo centro $O$ atstumu, ne didesniu už spindulį $r$:
+\[
+D(O,\,r) = \{\, P \in \text{plokštuma} \mid |OP| \leq r \,\}.
+\]
+\end{definition}
+
+\begin{remark}
+Svarbu skirti sąvokas: \emph{apskritimas} yra tik linija (kreivė), o \emph{skritulys} – visa plokštumos dalis, apribota tuo apskritimu.
+\end{remark}
+
+\subsubsection*{Pagrindinės sąvokos}
+
+\begin{itemize}
+  \item \textbf{Centras} $O$ – taškas, nuo kurio visi apskritimo taškai yra vienodai nutolę.
+  \item \textbf{Spindulys} $r$ – atkarpa, jungianti centrą su bet kuriuo apskritimo tašku; taip pat šios atkarpos ilgis.
+  \item \textbf{Skersmuo} $d = 2r$ – apskritimo styga, einanti per centrą.
+  \item \textbf{Styga} – atkarpa, jungianti du apskritimo taškus. Ilgiausia styga yra skersmuo.
+  \item \textbf{Lankas} – apskritimo dalis tarp dviejų taškų.
+  \item \textbf{Centrinis kampas} – kampas, kurio viršūnė yra apskritimo centre.
+  \item \textbf{Įbrėžtinis kampas} – kampas, kurio viršūnė yra ant apskritimo, o kraštinės eina per du kitus apskritimo taškus.
+\end{itemize}
+
+\subsubsection*{Apskritimo lygtis}
+
+Apskritimo, kurio centras yra taške $O(a,\, b)$ ir spindulys $r$, \textbf{lygtis koordinačių plokštumoje}:
+\[
+(x - a)^2 + (y - b)^2 = r^2.
+\]
+
+Jei centras yra koordinačių pradžioje $O(0,\, 0)$:
+\[
+x^2 + y^2 = r^2.
+\]
+
+\begin{example}
+Parašykite apskritimo, kurio centras $O(3,\,-2)$ ir spindulys $r = 5$, lygtį.
+
+\textbf{Sprendimas:}
+\[
+(x-3)^2 + (y+2)^2 = 25.
+\]
+\end{example}
+
+\subsubsection*{Apskritimo ilgis ir skritulio plotas}
+
+\begin{tcolorbox}[colback=blue!5!white, colframe=blue!60!black, title=Formulės]
+\begin{itemize}
+  \item Apskritimo ilgis (perimetras):
+  \[
+  C = 2\pi r = \pi d.
+  \]
+  \item Skritulio plotas:
+  \[
+  S = \pi r^2.
+  \]
+\end{itemize}
+\end{tcolorbox}
+
+\subsubsection*{Lanko ilgis ir išpjovos plotas}
+
+Jei centrinis kampas yra $\alpha$ laipsnių, tai:
+
+\begin{tcolorbox}[colback=green!5!white, colframe=green!60!black, title=Formulės]
+\begin{itemize}
+  \item Lanko ilgis:
+  \[
+  l = \frac{\pi r \alpha}{180^{\circ}}.
+  \]
+  \item Išpjovos plotas:
+  \[
+  S_{\text{išp}} = \frac{\pi r^2 \alpha}{360^{\circ}}.
+  \]
+\end{itemize}
+\end{tcolorbox}
+
+\begin{example}
+Apskaičiuokite lanko, atitinkančio centrinį kampą $\alpha = 60^\circ$, ilgį, jei apskritimo spindulys $r = 6$ cm.
+
+\textbf{Sprendimas:}
+\[
+l = \frac{\pi \cdot 6 \cdot 60^{\circ}}{180^{\circ}} = \frac{360\pi}{180} = 2\pi \approx 6{,}28 \text{ cm}.
+\]
+\end{example}
+
+\subsubsection*{Įbrėžtinio kampo teorema}
+
+\begin{theorem}[Įbrėžtinio kampo teorema]
+Įbrėžtinis kampas lygus pusei centrinio kampo, paremto tuo pačiu lanku:
+\[
+\angle \text{įbrėžt.} = \frac{1}{2}\,\angle \text{centrinis}.
+\]
+\end{theorem}
+
+\begin{corollary}
+Visi įbrėžtiniai kampai, paremti tuo pačiu lanku, yra lygūs.
+\end{corollary}
+
+\begin{corollary}
+Įbrėžtinis kampas, paremtas skersmeniu, yra lygus $90^\circ$ (\textbf{Taleso teorema}).
+\end{corollary}
+
+\begin{example}
+Apskritimo centre $O$ žinoma, kad centrinis kampas $\angle AOB = 110^\circ$. Raskite įbrėžtinį kampą $\angle ACB$, kur taškas $C$ yra ant mažesnio lanko $AB$ priešingos pusės.
+
+\textbf{Sprendimas:} Taškas $C$ yra ant didesnio lanko, todėl jis remia mažesnį lanką $AB$.
+\[
+\angle ACB = \frac{\angle AOB}{2} = \frac{110^\circ}{2} = 55^\circ.
+\]
+\end{example}
+
+\subsubsection*{Liestinė ir spindulys}
+
+\begin{theorem}
+Apskritimo spindulys, nubrėžtas į liestinės lietimosi tašką, yra statmenas liestinei:
+\[
+OT \perp \ell,
+\]
+kur $T$ – lietimosi taškas, $\ell$ – liestinė.
+\end{theorem}
+
+\begin{theorem}
+Iš taško, esančio už apskritimo, galima nubrėžti dvi apskritimo liestines, ir jų atkarpų nuo to taško iki lietimosi taškų ilgiai yra lygūs:
+\[
+|PA| = |PB|,
+\]
+kur $A$ ir $B$ – lietimosi taškai, $P$ – išorinis taškas.
+\end{theorem}
+
+\begin{example}
+Iš taško $P$ nubrėžtos dvi apskritimo liestinės. Atstumas nuo $P$ iki centro $O$ yra $10$ cm, o spindulys $r = 6$ cm. Raskite liestinių atkarpų ilgį.
+
+\textbf{Sprendimas:} Kadangi $OA \perp PA$, trikampis $OAP$ yra statusis:
+\[
+|PA|^2 = |PO|^2 - r^2 = 10^2 - 6^2 = 100 - 36 = 64,
+\]
+\[
+|PA| = 8 \text{ cm}.
+\]
+\end{example}
+
+% -------------------------------------------------------
+\subsection{Apskritimo ir tiesės tarpusavio padėtis}
+
+Tiesė plokštumoje gali turėti tris skirtingas tarpusavio padėtis su apskritimu, priklausomai nuo atstumo $d$ nuo apskritimo centro $O$ iki tiesės.
+
+\begin{tcolorbox}[colback=yellow!10!white, colframe=orange!80!black, title=Tiesės ir apskritimo padėtys]
+Tegul $r$ – apskritimo spindulys, $d$ – atstumas nuo centro iki tiesės.
+\begin{itemize}
+  \item \textbf{Kirstinė} ($d < r$): tiesiė kerta apskritimą dviejuose taškuose.
+  \item \textbf{Liestinė} ($d = r$): tiesė liečia apskritimą viename taške.
+  \item \textbf{Nesikertanti} ($d > r$): tiesė neturi bendrų taškų su apskritimu.
+\end{itemize}
+\end{tcolorbox}
+
+\subsubsection*{Atstumas nuo taško iki tiesės}
+
+Atstumas nuo taško $O(x_0,\, y_0)$ iki tiesės $ax + by + c = 0$ apskaičiuojamas formule:
+\[
+d = \frac{|ax_0 + by_0 + c|}{\sqrt{a^2 + b^2}}.
+\]
+
+\begin{example}
+Nustatykite tiesės $3x + 4y - 25 = 0$ ir apskritimo $x^2 + y^2 = 25$ tarpusavio padėtį.
+
+\textbf{Sprendimas:} Apskritimo centras $O(0, 0)$, spindulys $r = 5$.
+
+Atstumas nuo $O$ iki tiesės:
+\[
+d = \frac{|3\cdot 0 + 4\cdot 0 - 25|}{\sqrt{3^2 + 4^2}} = \frac{25}{\sqrt{25}} = \frac{25}{5} = 5.
+\]
+
+Kadangi $d = r = 5$, tiesė yra \textbf{liestinė}.
+\end{example}
+
+\begin{example}
+Nustatykite tiesės $y = x + 1$ ir apskritimo $(x-2)^2 + (y-3)^2 = 9$ tarpusavio padėtį.
+
+\textbf{Sprendimas:} Apskritimo centras $O(2, 3)$, spindulys $r = 3$.
+
+Perrašome tiesę standartiniu pavidalu: $x - y + 1 = 0$.
+
+\[
+d = \frac{|1\cdot 2 + (-1)\cdot 3 + 1|}{\sqrt{1^2 + (-1)^2}} = \frac{|2 - 3 + 1|}{\sqrt{2}} = \frac{0}{\sqrt{2}} = 0.
+\]
+
+Kadangi $d = 0 < r = 3$, tiesė yra \textbf{kirstinė} (ir eina per centrą – tai skersmuo).
+\end{example}
+
+\subsubsection*{Dviejų apskritimų tarpusavio padėtis}
+
+Tegul duoti du apskritimai su centrais $O_1$, $O_2$ ir spinduliais $r_1$, $r_2$ ($r_1 \geq r_2$). Žymime $d = |O_1 O_2|$.
+
+\begin{center}
+\begin{tabular}{|l|c|l|}
+\hline
+\textbf{Padėtis} & \textbf{Sąlyga} & \textbf{Bendrų taškų sk.} \\
+\hline
+Išoriniai & $d > r_1 + r_2$ & 0 \\
+Išoriškai liečiasi & $d = r_1 + r_2$ & 1 \\
+Kertasi & $|r_1 - r_2| < d < r_1 + r_2$ & 2 \\
+Vidiškai liečiasi & $d = r_1 - r_2$ & 1 \\
+Vidinis & $d < r_1 - r_2$ & 0 \\
+Sutampa & $d = 0,\ r_1 = r_2$ & $\infty$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{example}
+Ar apskritimai $(x-1)^2 + (y-1)^2 = 9$ ir $(x-5)^2 + (y-4)^2 = 4$ kertasi?
+
+\textbf{Sprendimas:} $O_1(1,1)$, $r_1 = 3$; $O_2(5,4)$, $r_2 = 2$.
+\[
+d = \sqrt{(5-1)^2 + (4-1)^2} = \sqrt{16 + 9} = \sqrt{25} = 5.
+\]
+Tikriname: $r_1 + r_2 = 5$ ir $d = 5$, todėl apskritimai \textbf{išoriškai liečiasi} viename taške.
+\end{example}
+
+% -------------------------------------------------------
+\subsection{Įbrėžtinis ir apibrėžtinis apskritimas}
+
+\subsubsection*{Apibrėžtinis apskritimas (apie trikampį)}
+
+\begin{definition}
+\textbf{Apibrėžtinis apskritimas} – apskritimas, einantis per visas trikampio (ar kito daugiakampio) viršūnes.
+\end{definition}
+
+\begin{theorem}
+Apie kiekvieną trikampį galima apibrėžti apskritimą, ir jo centras yra trikampio \textbf{kraštinių vidurio statmenų susikirtimo taškas} (vadinamas \emph{apcentru}).
+\end{theorem}
+
+\begin{tcolorbox}[colback=blue!5!white, colframe=blue!60!black, title=Apibrėžtinio apskritimo spindulys]
+Apie trikampį $ABC$ apibrėžto apskritimo spindulys apskaičiuojamas pagal \textbf{sinusų teoremą}:
+\[
+R = \frac{a}{2\sin\alpha} = \frac{b}{2\sin\beta} = \frac{c}{2\sin\gamma},
+\]
+kur $a, b, c$ – trikampio kraštinės, $\alpha, \beta, \gamma$ – priešingieji kampai.
+
+Taip pat naudojama formulė per trikampio plotą $S$:
+\[
+R = \frac{abc}{4S}.
+\]
+\end{tcolorbox}
+
+\subsubsection*{Apibrėžtinis apskritimas ypatingiems trikampiams}
+
+\begin{itemize}
+  \item \textbf{Lygiakraštis trikampis} (kraštinė $a$):
+  \[
+  R = \frac{a}{\sqrt{3}} = \frac{a\sqrt{3}}{3}.
+  \]
+  \item \textbf{Stačiasis trikampis} (įžambinė $c$):
+  \[
+  R = \frac{c}{2}.
+  \]
+  (Apibrėžtinio apskritimo centras yra įžambinės vidurys.)
+  \item \textbf{Lygiašonis trikampis} su kraštinėmis $a, a, b$:
+  \[
+  R = \frac{a^2 b}{\sqrt{(2a+b)(2a-b)}\cdot b} = \frac{a^2}{\sqrt{4a^2 - b^2}}.
+  \]
+\end{itemize}
+
+\subsubsection*{Įbrėžtinis apskritimas (į trikampį)}
+
+\begin{definition}
+\textbf{Įbrėžtinis apskritimas} – apskritimas, liečiantis visas trikampio (ar kito daugiakampio) kraštines iš vidaus.
+\end{definition}
+
+\begin{theorem}
+Į kiekvieną trikampį galima įbrėžti apskritimą, ir jo centras yra trikampio \textbf{pusiaukampinių susikirtimo taškas} (vadinamas \emph{incentru}).
+\end{theorem}
+
+\begin{tcolorbox}[colback=green!5!white, colframe=green!60!black, title=Įbrėžtinio apskritimo spindulys]
+Į trikampį $ABC$ įbrėžto apskritimo spindulys:
+\[
+r = \frac{S}{p},
+\]
+kur $S$ – trikampio plotas, $p = \dfrac{a+b+c}{2}$ – trikampio pusperimetris.
+\end{tcolorbox}
+
+\subsubsection*{Įbrėžtinis apskritimas ypatingiems trikampiams}
+
+\begin{itemize}
+  \item \textbf{Lygiakraštis trikampis} (kraštinė $a$):
+  \[
+  r = \frac{a\sqrt{3}}{6} = \frac{a}{2\sqrt{3}}.
+  \]
+  \item \textbf{Stačiasis trikampis} (statiniai $a, b$, įžambinė $c$):
+  \[
+  r = \frac{a + b - c}{2}.
+  \]
+  \item \textbf{Pastaba:} Lygiakraščio trikampio atveju $R = 2r$.
+\end{itemize}
+
+\begin{example}
+Trikampio kraštinės yra $a = 5$, $b = 12$, $c = 13$ cm. Ar trikampis stačiasis? Apskaičiuokite įbrėžtinio ir apibrėžtinio apskritimų spindulius.
+
+\textbf{Sprendimas:}
+
+\textbf{1.} Tikriname: $5^2 + 12^2 = 25 + 144 = 169 = 13^2$. Taip, trikampis \textbf{stačiasis}.
+
+\textbf{2.} Trikampio plotas: $S = \dfrac{1}{2} \cdot 5 \cdot 12 = 30$ cm\textsuperscript{2}.
+
+\textbf{3.} Pusperimetris: $p = \dfrac{5 + 12 + 13}{2} = 15$ cm.
+
+\textbf{4.} Įbrėžtinio apskritimo spindulys:
+\[
+r = \frac{S}{p} = \frac{30}{15} = 2 \text{ cm}.
+\]
+
+\textbf{5.} Apibrėžtinio apskritimo spindulys (stačiajam trikampiui):
+\[
+R = \frac{c}{2} = \frac{13}{2} = 6{,}5 \text{ cm}.
+\]
+\end{example}
+
+\subsubsection*{Įbrėžtinis ir apibrėžtinis apskritimas keturkampiuose}
+
+\begin{theorem}
+Į iškiląjį keturkampį galima įbrėžti apskritimą \textbf{tada ir tik tada}, kai jo priešingų kraštinių sumos yra lygios:
+\[
+a + c = b + d,
+\]
+kur $a, b, c, d$ – keturkampio kraštinės iš eilės.
+\end{theorem}
+
+\begin{theorem}
+Apie iškiląjį keturkampį galima apibrėžti apskritimą \textbf{tada ir tik tada}, kai jo priešingų kampų suma lygi $180^\circ$:
+\[
+\alpha + \gamma = \beta + \delta = 180^\circ.
+\]
+Toks keturkampis vadinamas \textbf{cikliniu}.
+\end{theorem}
+
+\begin{example}
+Stačiakampis keturkampis $ABCD$ turi kraštines $AB = 3$, $BC = 5$, $CD = 7$, $DA = x$. Raskite $x$, jei apskritimas galėtų būti įbrėžtas.
+
+\textbf{Sprendimas:}
+\[
+AB + CD = BC + DA \implies 3 + 7 = 5 + x \implies x = 5.
+\]
+\end{example}
+
+\begin{exercise}
+Trikampio plotas lygus $84$ cm\textsuperscript{2}, o kraštinės yra $13$, $14$ ir $15$ cm. Apskaičiuokite į trikampį įbrėžto apskritimo spindulį.
+\end{exercise}
+
+\begin{exercise}
+Apskritimo, kurio centras $O(-1, 2)$ ir spindulys $r = 4$, atžvilgiu nustatykite tiesės $3x - 4y + 15 = 0$ padėtį.
+\end{exercise}
+
+\begin{exercise}
+Įrodykite, kad taškas $P(3, 4)$ yra ant apskritimo $x^2 + y^2 = 25$, ir nubrėžkite liestinę šiame taške. Raskite tos liestinės lygtį.
+\end{exercise}
+
+\section{Koordinačių sistema plokštumoje}
+
+Koordinačių sistema plokštumoje – tai sistema, leidžianti tiksliai apibūdinti kiekvieno taško padėtį plokštumoje naudojant du skaičius (koordinates). Ji sudaroma iš dviejų statmenų koordinačių ašių: horizontaliosios \textbf{abscisių ašies} $Ox$ ir vertikaliosios \textbf{ordinačių ašies} $Oy$. Šių ašių susikirtimo taškas vadinamas \textbf{koordinačių pradžia} $O(0;0)$.
+
+\begin{definition}[Taško koordinatės]
+Taškas $A$ plokštumoje aprašomas pora $(x; y)$, kur $x$ – taško \textbf{abscisė} (atstumas iki $Oy$ ašies), o $y$ – taško \textbf{ordinatė} (atstumas iki $Ox$ ašies). Rašome $A(x; y)$.
+\end{definition}
+
+Koordinačių ašys plokštumą dalija į keturis \textbf{ketvirčius}:
+\begin{itemize}
+    \item \textbf{I ketvirtis}: $x > 0$, $y > 0$
+    \item \textbf{II ketvirtis}: $x < 0$, $y > 0$
+    \item \textbf{III ketvirtis}: $x < 0$, $y < 0$
+    \item \textbf{IV ketvirtis}: $x > 0$, $y < 0$
+\end{itemize}
+
+% ─────────────────────────────────────────────
+\subsection{Atstumo formulė}
+% ─────────────────────────────────────────────
+
+\begin{definition}[Atstumas tarp dviejų taškų]
+Atstumas tarp dviejų koordinačių plokštumos taškų $A(x_1;\, y_1)$ ir $B(x_2;\, y_2)$ lygus:
+\[
+    |AB| = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}.
+\]
+\end{definition}
+
+\textbf{Įrodymo idėja.} Taškus $A$ ir $B$ sujunkime atkarpa. Statykime iš $A$ statmeną liniją $Ox$ krypčiai ir iš $B$ – liniją $Oy$ krypčiai. Gauname stačiojo trikampio $AKB$ (kur $K(x_2; y_1)$) katetus:
+\[
+    |AK| = |x_2 - x_1|, \qquad |KB| = |y_2 - y_1|.
+\]
+Pagal Pitagoro teoremą:
+\[
+    |AB|^2 = |AK|^2 + |KB|^2 = (x_2 - x_1)^2 + (y_2 - y_1)^2,
+\]
+iš kur gauname atstumo formulę. $\square$
+
+\begin{remark}
+Specialieji atvejai:
+\begin{itemize}
+    \item Jei $A$ ir $B$ ant $Ox$ ašies ($y_1 = y_2 = 0$): $\;|AB| = |x_2 - x_1|$.
+    \item Jei $A$ ir $B$ ant $Oy$ ašies ($x_1 = x_2 = 0$): $\;|AB| = |y_2 - y_1|$.
+    \item Atstumas nuo taško $A(x_1; y_1)$ iki koordinačių pradžios $O(0;0)$:
+    \[
+        |OA| = \sqrt{x_1^2 + y_1^2}.
+    \]
+\end{itemize}
+\end{remark}
+
+\begin{example}
+Raskite atstumą tarp taškų $A(2;\, 3)$ ir $B(-2;\, 1)$.
+
+\textbf{Sprendimas:}
+\[
+    |AB| = \sqrt{(-2-2)^2 + (1-3)^2} = \sqrt{(-4)^2 + (-2)^2} = \sqrt{16 + 4} = \sqrt{20} = 2\sqrt{5}.
+\]
+\end{example}
+
+\begin{example}
+Įrodykite, kad taškai $A(0;\,0)$, $B(4;\,0)$ ir $C(2;\,2\sqrt{3})$ sudaro lygiakraštį trikampį.
+
+\textbf{Sprendimas:}
+\begin{align*}
+    |AB| &= \sqrt{(4-0)^2 + (0-0)^2} = 4, \\
+    |BC| &= \sqrt{(2-4)^2 + (2\sqrt{3}-0)^2} = \sqrt{4 + 12} = 4, \\
+    |CA| &= \sqrt{(0-2)^2 + (0-2\sqrt{3})^2} = \sqrt{4 + 12} = 4.
+\end{align*}
+Kadangi $|AB| = |BC| = |CA| = 4$, trikampis yra lygiakraštis. $\square$
+\end{example}
+
+\begin{exercise}
+Raskite atstumus tarp šių taškų porų:
+\begin{enumerate}[label=\alph*)]
+    \item $P(1;\,2)$ ir $Q(4;\,6)$
+    \item $M(-3;\,5)$ ir $N(2;\,-7)$
+    \item $A(-1;\,-1)$ ir $B(3;\,2)$
+\end{enumerate}
+\end{exercise}
+
+% ─────────────────────────────────────────────
+\subsection{Atkarpos vidurio formulė}
+% ─────────────────────────────────────────────
+
+\begin{definition}[Atkarpos vidurio taškas]
+Atkarpos $AB$, kur $A(x_1;\, y_1)$ ir $B(x_2;\, y_2)$, vidurio taško $V$ koordinatės:
+\[
+    V = \left(\frac{x_1 + x_2}{2};\; \frac{y_1 + y_2}{2}\right).
+\]
+\end{definition}
+
+\textbf{Įrodymo idėja.} Taškas $V(x_v;\, y_v)$ yra atkarpos $AB$ vidurys, kai $|AV| = |VB|$. Kadangi koordinatės kinta tolygiai palei atkarpą, vidurio koordinatė yra kraštinių koordinačių aritmetinis vidurkis. $\square$
+
+\begin{example}
+Raskite atkarpos $AB$ vidurio taško koordinates, jei $A(-4;\, 6)$ ir $B(2;\, -2)$.
+
+\textbf{Sprendimas:}
+\[
+    V = \left(\frac{-4+2}{2};\; \frac{6+(-2)}{2}\right) = \left(\frac{-2}{2};\; \frac{4}{2}\right) = (-1;\; 2).
+\]
+\end{example}
+
+\begin{example}
+Žinoma, kad taškas $V(3;\, 1)$ yra atkarpos $AB$ vidurys. Raskite taško $B$ koordinates, jei $A(1;\, -3)$.
+
+\textbf{Sprendimas.} Iš vidurio formulės:
+\[
+    \frac{x_1 + x_2}{2} = 3 \implies x_2 = 2 \cdot 3 - 1 = 5,
+\]
+\[
+    \frac{y_1 + y_2}{2} = 1 \implies y_2 = 2 \cdot 1 - (-3) = 5.
+\]
+Taigi $B(5;\, 5)$.
+\end{example}
+
+\begin{remark}
+Vidurio formulė naudojama ir koordinačių geometrijoje, sprendžiant uždavinius apie:
+\begin{itemize}
+    \item trikampio medianas (jos eina per viršūnę ir priešingosios kraštinės vidurį),
+    \item lygiagretainio savybes (įstrižainės pusiaudala viena kitą),
+    \item apskritimo centro radimą pagal skersmens galus.
+\end{itemize}
+\end{remark}
+
+\begin{exercise}
+\begin{enumerate}[label=\alph*)]
+    \item Raskite atkarpos $MN$ vidurio taško koordinates, jei $M(5;\,-3)$ ir $N(-1;\,7)$.
+    \item Žinoma, kad atkarpos $PQ$ vidurio taškas yra $S(0;\,4)$ ir $P(-2;\,1)$. Raskite $Q$ koordinates.
+    \item Lygiagretainio $ABCD$ trys viršūnės yra $A(1;\,2)$, $B(5;\,0)$, $C(6;\,4)$. Raskite $D$ koordinates.
+\end{enumerate}
+\end{exercise}
+
+% ─────────────────────────────────────────────
+\subsection{Tiesės lygtis plokštumoje}
+% ─────────────────────────────────────────────
+
+Tiesė plokštumoje gali būti aprašoma keliais lygiaverčiais būdais. Svarbu mokėti atpažinti ir taikyti kiekvieną.
+
+% ── 1. Bendroji lygtis ──────────────────────
+\subsubsection*{Bendroji tiesės lygtis}
+
+\begin{definition}[Bendroji forma]
+Kiekviena tiesė plokštumoje gali būti užrašyta \textbf{bendrosios lygties} pavidalu:
+\[
+    Ax + By + C = 0,
+\]
+kur $A$, $B$, $C \in \mathbb{R}$ ir $(A, B) \neq (0, 0)$.
+\end{definition}
+
+Koeficientai turi aiškią geometrinę prasmę: vektorius $\vec{n} = (A;\, B)$ yra tiesės \textbf{normalės vektorius} (statmenas tiesės krypčiai).
+
+% ── 2. Lygtis su nuolydžio koeficientu ────
+\subsubsection*{Lygtis su nuolydžio koeficientu}
+
+\begin{definition}[Nuolydžio koeficiento forma]
+Jei tiesė nėra lygiagreti $Oy$ ašiai ($B \neq 0$), ją galima užrašyti:
+\[
+    y = kx + b,
+\]
+kur:
+\begin{itemize}
+    \item $k$ – \textbf{nuolydžio koeficientas} (charakterizuoja tiesės pasvirumą),
+    \item $b$ – \textbf{ordinačių ašies atkarpėlė} (tiesė kerta $Oy$ taške $(0;\, b)$).
+\end{itemize}
+\end{definition}
+
+\begin{definition}[Nuolydžio koeficiento geometrinė prasmė]
+Jei $\alpha$ – kampas tarp tiesės ir teigiamosios $Ox$ ašies pusės, tai:
+\[
+    k = \tg \alpha.
+\]
+\begin{itemize}
+    \item $k > 0$: tiesė kyla iš kairės į dešinę.
+    \item $k < 0$: tiesė leidžiasi iš kairės į dešinę.
+    \item $k = 0$: tiesė lygiagreti $Ox$ ašiai.
+\end{itemize}
+\end{definition}
+
+Ryšys tarp bendrosios lygties ir nuolydžio koeficiento:
+\[
+    k = -\frac{A}{B}, \qquad b = -\frac{C}{B} \quad (B \neq 0).
+\]
+
+% ── 3. Tiesė per tašką su nuolydžiu ────────
+\subsubsection*{Tiesės lygtis, einanti per tašką su duotu nuolydžiu}
+
+\begin{theorem}
+Tiesės, einančios per tašką $M_0(x_0;\, y_0)$ su nuolydžio koeficientu $k$, lygtis:
+\[
+    y - y_0 = k(x - x_0).
+\]
+\end{theorem}
+
+\begin{example}
+Užrašykite tiesės lygtį, einančią per tašką $A(2;\, -1)$ su nuolydžio koeficientu $k = 3$.
+
+\textbf{Sprendimas:}
+\[
+    y - (-1) = 3(x - 2) \implies y + 1 = 3x - 6 \implies y = 3x - 7.
+\]
+\end{example}
+
+% ── 4. Tiesė per du taškus ──────────────────
+\subsubsection*{Tiesės lygtis, einanti per du taškus}
+
+\begin{theorem}
+Tiesės, einančios per du skirtingus taškus $A(x_1;\, y_1)$ ir $B(x_2;\, y_2)$ ($x_1 \neq x_2$), lygtis:
+\[
+    \frac{y - y_1}{y_2 - y_1} = \frac{x - x_1}{x_2 - x_1},
+\]
+arba ekvivalenčiai nuolydžio koeficientas:
+\[
+    k = \frac{y_2 - y_1}{x_2 - x_1}.
+\]
+Kai $x_1 = x_2$ (tiesė lygiagreti $Oy$), tiesės lygtis yra $x = x_1$.
+\end{theorem}
+
+\begin{example}
+Raskite tiesės lygtį, einančią per taškus $A(1;\, 2)$ ir $B(3;\, 8)$.
+
+\textbf{Sprendimas.} Pirmiausia randame nuolydžio koeficientą:
+\[
+    k = \frac{8 - 2}{3 - 1} = \frac{6}{2} = 3.
+\]
+Tada taikome formulę per tašką $A(1;\,2)$:
+\[
+    y - 2 = 3(x - 1) \implies y = 3x - 1.
+\]
+\end{example}
+
+% ── 5. Lygiagrečios ir statmenos tiesės ────
+\subsubsection*{Tiesių tarpusavio padėtis}
+
+\begin{theorem}[Lygiagretumo sąlyga]
+Dvi tiesės $y = k_1 x + b_1$ ir $y = k_2 x + b_2$ yra \textbf{lygiagrečios}, jei ir tik jei:
+\[
+    k_1 = k_2 \quad \text{ir} \quad b_1 \neq b_2.
+\]
+Jei $k_1 = k_2$ ir $b_1 = b_2$ – tiesės sutampa.
+\end{theorem}
+
+\begin{theorem}[Statmenumo sąlyga]
+Dvi tiesės $y = k_1 x + b_1$ ir $y = k_2 x + b_2$ yra \textbf{statmenos}, jei ir tik jei:
+\[
+    k_1 \cdot k_2 = -1.
+\]
+\end{theorem}
+
+\begin{example}
+Parašykite tiesės, einančios per tašką $P(4;\,1)$ ir statmenos tiesei $y = 2x + 3$, lygtį.
+
+\textbf{Sprendimas.} Duotos tiesės $k_1 = 2$. Statmenos tiesės nuolydžio koeficientas:
+\[
+    k_2 = -\frac{1}{k_1} = -\frac{1}{2}.
+\]
+Tiesės lygtis per tašką $P(4;\,1)$:
+\[
+    y - 1 = -\frac{1}{2}(x - 4) \implies y = -\frac{1}{2}x + 3.
+\]
+\end{example}
+
+% ── 6. Atstumas nuo taško iki tiesės ───────
+\subsubsection*{Atstumas nuo taško iki tiesės}
+
+\begin{theorem}[Atstumas nuo taško iki tiesės]
+Atstumas $d$ nuo taško $M_0(x_0;\, y_0)$ iki tiesės $Ax + By + C = 0$ lygus:
+\[
+    d = \frac{|A x_0 + B y_0 + C|}{\sqrt{A^2 + B^2}}.
+\]
+\end{theorem}
+
+\begin{example}
+Raskite atstumą nuo taško $M(3;\, -2)$ iki tiesės $3x - 4y + 5 = 0$.
+
+\textbf{Sprendimas:}
+\[
+    d = \frac{|3 \cdot 3 + (-4)(-2) + 5|}{\sqrt{3^2 + (-4)^2}} = \frac{|9 + 8 + 5|}{\sqrt{9 + 16}} = \frac{22}{5} = 4{,}4.
+\]
+\end{example}
+
+\begin{remark}
+Atstumo nuo taško iki tiesės formulė dažnai naudojama:
+\begin{itemize}
+    \item apskaičiuojant trikampio aukštinę pagal viršūnę ir priešingąją kraštinę,
+    \item nustatant apskritimo ir tiesės tarpusavio padėtį (lyginant $d$ su spinduliu $r$),
+    \item sprendžiant optimizavimo uždavinius.
+\end{itemize}
+\end{remark}
+
+\begin{exercise}
+\begin{enumerate}[label=\alph*)]
+    \item Parašykite tiesės, einančios per taškus $A(-1;\,3)$ ir $B(2;\,-3)$, lygtį.
+    \item Ar tiesės $y = 3x - 1$ ir $6x - 2y + 4 = 0$ yra lygiagrečios? Pagrįskite.
+    \item Raskite tiesės, einančios per tašką $(2;\,5)$ ir lygiagrečios $Ox$ ašiai, lygtį.
+    \item Raskite atstumą nuo koordinačių pradžios $O(0;\,0)$ iki tiesės $5x + 12y - 26 = 0$.
+    \item Parašykite tiesės, statmenos tiesei $2x - y + 1 = 0$ ir einančios per tašką $(4;\,3)$, lygtį.
+\end{enumerate}
+\end{exercise}
+
+\section{Plotai ir perimetrai}
+
+\subsection{Pagrindinės sąvokos}
+
+\begin{definition}
+\textbf{Perimetras} – uždaros plokščios figūros ribos (kontūro) ilgis. Žymimas raide $P$.
+\end{definition}
+
+\begin{definition}
+\textbf{Plotas} – dydis, apibūdinantis plokščios figūros dydį plokštumoje. Žymimas raide $S$.
+\end{definition}
+
+Plotų matavimo vienetai: $\text{mm}^2$, $\text{cm}^2$, $\text{dm}^2$, $\text{m}^2$, $\text{km}^2$. \\
+Vienetų perskaičiavimas: $1\,\text{m}^2 = 100\,\text{dm}^2 = 10\,000\,\text{cm}^2 = 1\,000\,000\,\text{mm}^2$.
+
+% -------------------------------------------------------
+\subsection{Trikampis}
+
+\begin{tcolorbox}[title={Trikampio perimetras}]
+\[
+P = a + b + c
+\]
+čia $a, b, c$ – trikampio kraštinių ilgiai.
+\end{tcolorbox}
+
+\subsubsection*{Trikampio ploto formulės}
+
+Egzistuoja kelios lygiavertės trikampio ploto formulės:
+
+\begin{enumerate}
+    \item \textbf{Pagal kraštinę ir aukštinę:}
+    \[
+    S = \frac{1}{2} \cdot a \cdot h_a
+    \]
+    čia $a$ – kraštinė, $h_a$ – į ją nubrėžta aukštinė.
+
+    \item \textbf{Pagal dvi kraštines ir tarp jų esantį kampą (trigonometrinė formulė):}
+    \[
+    S = \frac{1}{2} \cdot a \cdot b \cdot \sin C
+    \]
+    čia $a$, $b$ – dvi kraštinės, $C$ – kampas tarp jų.
+
+    \item \textbf{Herono formulė} (pagal tris kraštines):
+    \[
+    S = \sqrt{p(p-a)(p-b)(p-c)}
+    \]
+    čia $p = \dfrac{a+b+c}{2}$ – pusperimetris.
+
+    \item \textbf{Pagal pusperimetrį ir įbrėžto apskritimo spindulį:}
+    \[
+    S = p \cdot r
+    \]
+    čia $r$ – įbrėžto apskritimo spindulys.
+
+    \item \textbf{Pagal kraštines ir apibrėžto apskritimo spindulį:}
+    \[
+    S = \frac{a \cdot b \cdot c}{4R}
+    \]
+    čia $R$ – apibrėžto apskritimo spindulys.
+\end{enumerate}
+
+\begin{tcolorbox}[title={VBE formulyno trikampio suvestinė}]
+\[
+S = \frac{1}{2}ab\sin C = \sqrt{p(p-a)(p-b)(p-c)} = rp = \frac{abc}{4R}
+\]
+\end{tcolorbox}
+
+\subsubsection*{Specialieji trikampiai}
+
+\begin{itemize}
+    \item \textbf{Stačiasis trikampis} (statiniai $a$ ir $b$):
+    \[
+    S = \frac{1}{2} \cdot a \cdot b, \qquad P = a + b + c
+    \]
+
+    \item \textbf{Lygiakraštis trikampis} (kraštinė $a$):
+    \[
+    S = \frac{a^2\sqrt{3}}{4}, \qquad h = \frac{a\sqrt{3}}{2}, \qquad P = 3a
+    \]
+\end{itemize}
+
+\begin{example}
+Trikampio kraštinės yra $a = 5$, $b = 7$, $c = 8$. Raskite jo plotą.
+
+\textbf{Sprendimas:}
+\[
+p = \frac{5+7+8}{2} = 10
+\]
+\[
+S = \sqrt{10(10-5)(10-7)(10-8)} = \sqrt{10 \cdot 5 \cdot 3 \cdot 2} = \sqrt{300} = 10\sqrt{3}
+\]
+\end{example}
+
+% -------------------------------------------------------
+\subsection{Keturkampiai}
+
+\subsubsection*{Kvadratas}
+
+\begin{tcolorbox}[title={Kvadratas (kraštinė $a$, įstrižainė $d$)}]
+\[
+P = 4a, \qquad S = a^2 = \frac{d^2}{2}
+\]
+\end{tcolorbox}
+
+Papildomos formulės pagal įbrėžtą ir apibrėžtą apskritimą:
+\[
+S = 2R^2 = 4r^2
+\]
+čia $R$ – apibrėžto apskritimo, $r$ – įbrėžto apskritimo spindulys.
+
+\subsubsection*{Stačiakampis}
+
+\begin{tcolorbox}[title={Stačiakampis (kraštinės $a$, $b$, įstrižainė $d$)}]
+\[
+P = 2(a+b), \qquad S = a \cdot b
+\]
+\[
+d = \sqrt{a^2 + b^2}
+\]
+\end{tcolorbox}
+
+\subsubsection*{Lygiagretainis}
+
+\begin{tcolorbox}[title={Lygiagretainis}]
+\[
+P = 2(a+b), \qquad S = a \cdot h = a \cdot b \cdot \sin\alpha
+\]
+\[
+S = \frac{1}{2} d_1 d_2 \sin\varphi
+\]
+čia $h$ – aukštinė į kraštinę $a$, $\alpha$ – kampas tarp kraštinių, \\
+$d_1, d_2$ – įstrižainės, $\varphi$ – kampas tarp įstrižainių.
+\end{tcolorbox}
+
+\subsubsection*{Rombas}
+
+\begin{tcolorbox}[title={Rombas (kraštinė $a$, įstrižainės $d_1$, $d_2$)}]
+\[
+P = 4a, \qquad S = a^2\sin\alpha = \frac{d_1 \cdot d_2}{2}
+\]
+čia $\alpha$ – kampas tarp kraštinių.
+\end{tcolorbox}
+
+\begin{remark}
+Rombo įstrižainės statmenos viena kitai, todėl visada galioja: $a^2 = \left(\dfrac{d_1}{2}\right)^2 + \left(\dfrac{d_2}{2}\right)^2$.
+\end{remark}
+
+\subsubsection*{Trapecija}
+
+\begin{tcolorbox}[title={Trapecija (pagrindai $a$, $b$; aukštinė $h$; vidurinė linija $m$)}]
+\[
+P = a + b + c + d, \qquad S = \frac{(a+b) \cdot h}{2} = m \cdot h
+\]
+čia $m = \dfrac{a+b}{2}$ – vidurinė linija, $c$, $d$ – šonai.
+\end{tcolorbox}
+
+\subsubsection*{Įbrėžtinis keturkampis}
+
+Keturkampio, į kurį galima įbrėžti apskritimą, plotas:
+\[
+S = \sqrt{(p-a)(p-b)(p-c)(p-d)}
+\]
+čia $a, b, c, d$ – kraštinių ilgiai, $p$ – pusperimetris. Tai \textbf{Brahmagupto formulė}.
+
+\begin{example}
+Trapecijos pagrindai yra $a = 10$ cm ir $b = 4$ cm, šonai $c = d = 5$ cm. Raskite aukštinę ir plotą.
+
+\textbf{Sprendimas:}
+
+Pažymime $h$ – aukštinę. Kiekviena šono projekcija ant pagrindo:
+\[
+x = \frac{a - b}{2} = \frac{10 - 4}{2} = 3 \text{ cm}
+\]
+\[
+h = \sqrt{c^2 - x^2} = \sqrt{25 - 9} = \sqrt{16} = 4 \text{ cm}
+\]
+\[
+S = \frac{(10+4) \cdot 4}{2} = 28 \text{ cm}^2
+\]
+\end{example}
+
+% -------------------------------------------------------
+\subsection{Taisyklingasis daugiakampis}
+
+\begin{definition}
+\textbf{Taisyklingasis daugiakampis} – daugiakampis, kurio visos kraštinės lygios ir visi kampai lygūs.
+\end{definition}
+
+\begin{tcolorbox}[title={Taisyklingasis $n$-kampis (kraštinė $a$)}]
+\[
+P = n \cdot a
+\]
+\[
+S = \frac{n \cdot a \cdot r}{2} = \frac{1}{2} R^2 n \sin\!\left(\frac{360°}{n}\right)
+\]
+čia $r$ – įbrėžto apskritimo spindulys (apotema), $R$ – apibrėžto apskritimo spindulys.
+\end{tcolorbox}
+
+\subsubsection*{Taisyklingasis šešiakampis}
+
+Taisyklingajame šešiakampyje kraštinė lygi apibrėžto apskritimo spinduliui ($a = R$), todėl:
+\[
+S = \frac{3\sqrt{3}}{2}\,a^2, \qquad r = \frac{a\sqrt{3}}{2}, \qquad P = 6a
+\]
+
+% -------------------------------------------------------
+\subsection{Apskritimas ir skritulys}
+
+\begin{definition}
+\textbf{Apskritimas} – visų plokštumos taškų, nutolusių nuo duoto centro taško atstumu $R$, aibė. \\
+\textbf{Skritulys} – visų plokštumos taškų, nutolusių nuo duoto centro taško atstumu, ne didesniu nei $R$, aibė.
+\end{definition}
+
+\begin{tcolorbox}[title={Apskritimas ir skritulys (spindulys $R$)}]
+\[
+C = 2\pi R \quad \text{(apskritimo ilgis)}, \qquad S = \pi R^2 \quad \text{(skritulio plotas)}
+\]
+\end{tcolorbox}
+
+\subsubsection*{Lanko ilgis ir išpjovos plotas}
+
+\begin{tcolorbox}[title={Lankas ir išpjova (centrinis kampas $\alpha$ laipsniais)}]
+\[
+l = \frac{\pi R \alpha}{180°} = \frac{2\pi R \alpha}{360°}
+\]
+\[
+S_{\text{išpj.}} = \frac{\pi R^2 \alpha}{360°} = \frac{R \cdot l}{2}
+\]
+\end{tcolorbox}
+
+\subsubsection*{Nuopjovos plotas}
+
+Nuopjova – figūra tarp styginės $AB$ ir lanko $AB$. Centrinis kampas $\alpha$ laipsniais:
+
+\[
+S_{\text{nuopj.}} = \frac{R^2}{2}\left(\frac{\pi\alpha}{180°} - \sin\alpha\right)
+\]
+
+Arba naudojant išpjovą:
+\[
+S_{\text{nuopj. (mažoji)}} = S_{\text{išpjova}} - S_{\triangle AOB}
+\]
+čia $O$ – apskritimo centras, $A$, $B$ – styginės galai.
+
+\begin{example}
+Apskritimo spindulys $R = 6$ cm, centrinis kampas $\alpha = 60°$. Raskite lanko ilgį ir išpjovos plotą.
+
+\textbf{Sprendimas:}
+\[
+l = \frac{\pi \cdot 6 \cdot 60°}{180°} = 2\pi \approx 6{,}28 \text{ cm}
+\]
+\[
+S = \frac{\pi \cdot 36 \cdot 60°}{360°} = 6\pi \approx 18{,}85 \text{ cm}^2
+\]
+\end{example}
+
+% -------------------------------------------------------
+\subsection{Ploto skaičiavimas su integralu}
+
+Naudojant apibrėžtinį integralą, galima apskaičiuoti bet kokios figūros, ribojamos kreivėmis, plotą.
+
+\begin{theorem}
+Jei $f(x) \geq 0$ intervale $[a;\,b]$, tai figūros, ribotos kreive $y = f(x)$, $x$ ašimi ir tiesėmis $x = a$, $x = b$, plotas:
+\[
+S = \int_a^b f(x)\,dx
+\]
+\end{theorem}
+
+\begin{theorem}
+Jei $f(x) \leq 0$ intervale $[a;\,b]$:
+\[
+S = -\int_a^b f(x)\,dx = \int_a^b |f(x)|\,dx
+\]
+\end{theorem}
+
+\begin{theorem}
+Figūros tarp dviejų kreivių $y = f(x)$ (viršutinė) ir $y = g(x)$ (apatinė) plotas intervale $[a;\,b]$:
+\[
+S = \int_a^b \bigl[f(x) - g(x)\bigr]\,dx
+\]
+\end{theorem}
+
+\begin{example}
+Raskite figūros, ribotos parabolės $y = x^2$ ir tiesės $y = x + 2$, plotą.
+
+\textbf{Sprendimas:}
+
+Pirmiausia randame susikirtimo taškus:
+\[
+x^2 = x + 2 \implies x^2 - x - 2 = 0 \implies (x-2)(x+1) = 0
+\]
+\[
+x_1 = -1, \quad x_2 = 2
+\]
+
+Intervale $[-1;\,2]$ tiesė yra viršuje: $x + 2 \geq x^2$, todėl:
+\[
+S = \int_{-1}^{2} \bigl[(x+2) - x^2\bigr]\,dx
+= \left[\frac{x^2}{2} + 2x - \frac{x^3}{3}\right]_{-1}^{2}
+\]
+\[
+= \left(2 + 4 - \frac{8}{3}\right) - \left(\frac{1}{2} - 2 + \frac{1}{3}\right)
+= \frac{10}{3} - \left(-\frac{7}{6}\right) = \frac{20}{6} + \frac{7}{6} = \frac{27}{6} = \frac{9}{2}
+\]
+\end{example}
+
+% -------------------------------------------------------
+\subsection{Formulių suvestinė}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Figūra} & \textbf{Perimetras} $P$ & \textbf{Plotas} $S$ \\
+\hline
+Trikampis & $a+b+c$ & $\dfrac{1}{2}ah_a$ \\
+\hline
+Lygiakraštis trikampis & $3a$ & $\dfrac{a^2\sqrt{3}}{4}$ \\
+\hline
+Kvadratas & $4a$ & $a^2$ \\
+\hline
+Stačiakampis & $2(a+b)$ & $ab$ \\
+\hline
+Lygiagretainis & $2(a+b)$ & $ah$ \\
+\hline
+Rombas & $4a$ & $\dfrac{d_1 d_2}{2}$ \\
+\hline
+Trapecija & $a+b+c+d$ & $\dfrac{(a+b)h}{2}$ \\
+\hline
+Apskritimas/Skritulys & $2\pi R$ & $\pi R^2$ \\
+\hline
+Išpjova & $2R + l$ & $\dfrac{\pi R^2 \alpha}{360°}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+% -------------------------------------------------------
+\subsection{Uždaviniai}
+
+\begin{exercise}
+Trikampio dvi kraštinės yra 6 cm ir 8 cm, o kampas tarp jų lygus $30°$. Raskite trikampio plotą ir perimetrą.
+\end{exercise}
+
+\begin{exercise}
+Rombo perimetras yra 40 cm, o viena įstrižainė lygi 12 cm. Raskite rombo plotą.
+\end{exercise}
+
+\begin{exercise}
+Apskritimo spindulys $R = 9$ cm. Apskaičiuokite išpjovos, atitinkančios $\alpha = 120°$ centrinį kampą, plotą ir lanko ilgį.
+\end{exercise}
+
+\begin{exercise}
+Raskite figūros, ribotos kreivės $y = \sqrt{x}$, $x$ ašies ir tiesės $x = 4$, plotą.
+\end{exercise}
+
+\begin{exercise}
+(VBE tipo uždavinys) Lygiašonio trikampio pagrindas yra 10 cm, o šonų ilgiai yra 13 cm. Raskite trikampio plotą, aukštinę į pagrindą, įbrėžto apskritimo spindulį ir apibrėžto apskritimo spindulį.
+\end{exercise}
+
+\begin{exercise}
+Raskite figūros, ribotos kreivių $y = x^2 - 4$ ir $y = -x^2 + 4$, plotą.
+\end{exercise}
+
