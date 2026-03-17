@@ -1,0 +1,8 @@
+.git/
+.github/
+.gitignore
+.ftpignore
+README.md
+*.md
+node_modules/
+12_klasė_tex/
