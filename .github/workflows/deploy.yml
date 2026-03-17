@@ -1,22 +1,30 @@
-name: 🚀 Deploy to InfinityFree via FTP
+name: Deploy to InfinityFree via FTP
 
 on:
   push:
     branches:
-      - main   # triggers only on pushes to "main"
+      - main
 
 jobs:
   ftp-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: 📥 Checkout code
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: 📤 FTP Deploy
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Generate HTML files
+        run: python gen.py
+
+      - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: ${{ secrets.FTP_TARGET_FOLDER }}
-          security: loose   # needed for InfinityFree's FTP
+          security: loose
