@@ -121,6 +121,28 @@
     </div>
   </div>
 
+  <div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+      Bandomasis
+      <span class="arrow">&#9660;</span>
+    </div>
+    <div class="section-body">
+
+      <div class="pdf-item">
+        <div class="pdf-label" onclick="togglePdf(this)">
+          <span>MATEMATIKA VBE II A 2025</span>
+          <div class="pdf-label-actions">
+            <a href="pdfs/12 klasė/Bandomasis/MATEMATIKA-VBE-II-A-2025.pdf" target="_blank" onclick="event.stopPropagation()">Atsisiųsti</a>
+            <span class="pdf-arrow">&#9660;</span>
+          </div>
+        </div>
+        <div class="pdf-collapse">
+          <iframe class="pdf-viewer" src="pdfs/12 klasė/Bandomasis/MATEMATIKA-VBE-II-A-2025.pdf"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script>
     function toggleSection(header) {
       header.classList.toggle('open');

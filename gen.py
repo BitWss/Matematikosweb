@@ -242,7 +242,7 @@ def build_index(classes):
     for class_folder, class_title, slug, theme_count in classes:
         cards_html += f"""    <a class="class-card" href="{slug}.html">
       <div class="card-title">{class_title}</div>
-      <div class="card-meta">{theme_count} tema{"" if theme_count == 1 else "s"}</div>
+      <div class="card-meta">{theme_count} temo{"" if theme_count == 1 else "s"}</div>
     </a>
 """
 
