@@ -2,11 +2,14 @@
 
 % XeLaTeX: Unicode natyviai, nereikia inputenc/fontenc
 \usepackage{fontspec}
+\usepackage{newunicodechar}
+\newunicodechar{°}{\ensuremath{^\circ}}
 \usepackage{lmodern}
 \usepackage[lithuanian]{babel}
 
 % Matematika
 \usepackage{amsmath, amssymb, amsthm}
+\renewcommand{\qedsymbol}{}
 \usepackage{mathtools}
 
 % Lietuviški operatoriai
@@ -72,3 +75,8 @@
 \include{chapters/B_uzduotys}
 
 \end{document}
+
+v1.1.1
+fixed ° rendering
+removed qed rendering
+fixed angle name in 01
