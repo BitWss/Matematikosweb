@@ -30,12 +30,12 @@ jobs:
           server-dir: ${{ secrets.FTP_TARGET_FOLDER }}
           security: loose
           exclude: |
-            **/.git*
-            **/.git*/**
-            **/.github/**
-            **/.gitignore
-            **/.ftpignore
-            **/README.md
-            **/*.md
-            **/node_modules/**
-            **/12_klasė_tex/**
+            .git*
+            .git*/**
+            .github/**
+            .gitignore
+            .ftpignore
+            README.md
+            *.md
+            node_modules/**
+            12_klasė_tex/**
