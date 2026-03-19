@@ -278,7 +278,7 @@ def build_index(classes):
     function sendFeedback() {{
       const msg = document.getElementById('feedbackText').value.trim();
       if (!msg) {{ alert('Prašome įvesti žinutę prieš siunčiant.'); return; }}
-      const to      = 'simas.stockus@mif.stud.vu.lt';
+      const to      = 'simas.devmail@gmail.com';
       const subject = encodeURIComponent('Pastaba / pasiūlymas dėl svetainės');
       const body    = encodeURIComponent(msg);
       window.location.href = `mailto:${{to}}?subject=${{subject}}&body=${{body}}`;

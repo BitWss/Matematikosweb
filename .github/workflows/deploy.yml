@@ -39,4 +39,5 @@ jobs:
             *.md
             node_modules/**
             12_klasė_tex/**
-          dangerous-clean-slate: false    # optional: for one cleanup run
+            *.py
+          dangerous-clean-slate: true    # optional: for one cleanup run
