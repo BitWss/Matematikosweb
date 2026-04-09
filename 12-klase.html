@@ -36,17 +36,18 @@
     }
     .back-link:hover { text-decoration: underline; }
     .section {
-      background: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.07);
-      margin-bottom: 28px;
-      overflow: hidden;
+      background: transparent;
+      border-radius: 0;
+      box-shadow: none;
+      margin-bottom: 32px;
+      overflow: visible;
     }
     .section-header {
-      background: #1a252f;
-      color: #f0f4f8;
-      padding: 16px 24px;
-      font-size: 1.05rem;
+      background: transparent;
+      color: #1a252f;
+      border-bottom: 2px solid #e0e6ed;
+      padding: 12px 0;
+      font-size: 1.1rem;
       font-weight: 600;
       cursor: pointer;
       display: flex;
@@ -55,29 +56,32 @@
       user-select: none;
       letter-spacing: 0.04em;
       text-transform: uppercase;
-      transition: background 0.2s;
+      transition: color 0.2s, border-color 0.2s;
     }
-    .section-header:hover { background: #2c3e50; }
-    .section-header .arrow { transition: transform 0.3s; font-size: 0.75rem; opacity: 0.7; }
+    .section-header:hover { color: #2980b9; border-color: #2980b9; }
+    .section-header .arrow { transition: transform 0.3s; font-size: 0.75rem; opacity: 0.5; color: #95a5a6; }
     .section-header.open .arrow { transform: rotate(180deg); }
-    .section-body { display: none; padding: 24px; gap: 20px; flex-direction: column; }
+    .section-body { display: none; padding: 16px 0; gap: 16px; flex-direction: column; }
     .section-body.open { display: flex; }
-    .pdf-item { border: 1px solid #dce3ea; border-radius: 6px; overflow: hidden; }
+    .pdf-item { border: none; border-radius: 0; overflow: visible; }
     .pdf-label {
-      background: #f0f4f8;
-      padding: 10px 16px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      border-bottom: 1px solid #dce3ea;
+      background: transparent;
+      border: none;
+      padding: 10px 0;
+      font-weight: 500;
+      font-size: 0.95rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       letter-spacing: 0.02em;
+      color: #2c3e50;
+      transition: color 0.2s;
     }
     .pdf-label {
       cursor: pointer;
       user-select: none;
     }
+    .pdf-label:hover { color: #2980b9; }
     .pdf-label-actions {
       display: flex;
       align-items: center;
@@ -108,14 +112,14 @@
 
       <div class="pdf-item">
         <div class="pdf-label" onclick="togglePdf(this)">
-          <span>12 klasė</span>
+          <span>12 klasė v1 1 1</span>
           <div class="pdf-label-actions">
-            <a href="pdfs/12 klasė/12 klasės kursas/12_klasė.pdf" target="_blank" onclick="event.stopPropagation()">Atsisiųsti</a>
+            <a href="pdfs/12 klasė/12 klasės kursas/12_klasė_v1_1_1.pdf" target="_blank" onclick="event.stopPropagation()">Atsisiųsti</a>
             <span class="pdf-arrow">&#9660;</span>
           </div>
         </div>
         <div class="pdf-collapse">
-          <iframe class="pdf-viewer" src="pdfs/12 klasė/12 klasės kursas/12_klasė.pdf"></iframe>
+          <iframe class="pdf-viewer" src="pdfs/12 klasė/12 klasės kursas/12_klasė_v1_1_1.pdf"></iframe>
         </div>
       </div>
     </div>
