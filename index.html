@@ -1,206 +1,917 @@
 <!DOCTYPE html>
 <html lang="lt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Matematikos užduotys</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f4f6f9;
-      color: #2c3e50;
-      padding: 40px 20px;
-    }
-    h1 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 8px;
-      color: #1a252f;
-      letter-spacing: 0.03em;
-    }
-    .subtitle {
-      text-align: center;
-      font-size: 0.9rem;
-      color: #95a5a6;
-      margin-bottom: 40px;
-      letter-spacing: 0.02em;
-    }
-    .back-link {
-      display: inline-block;
-      margin-bottom: 28px;
-      font-size: 0.88rem;
-      color: #2980b9;
-      text-decoration: none;
-      letter-spacing: 0.02em;
-    }
-    .back-link:hover { text-decoration: underline; }
-    .section {
-      background: transparent;
-      border-radius: 0;
-      box-shadow: none;
-      margin-bottom: 32px;
-      overflow: visible;
-    }
-    .section-header {
-      background: transparent;
-      color: #1a252f;
-      border-bottom: 2px solid #e0e6ed;
-      padding: 12px 0;
-      font-size: 1.1rem;
-      font-weight: 600;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      user-select: none;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      transition: color 0.2s, border-color 0.2s;
-    }
-    .section-header:hover { color: #2980b9; border-color: #2980b9; }
-    .section-header .arrow { transition: transform 0.3s; font-size: 0.75rem; opacity: 0.5; color: #95a5a6; }
-    .section-header.open .arrow { transform: rotate(180deg); }
-    .section-body { display: none; padding: 16px 0; gap: 16px; flex-direction: column; }
-    .section-body.open { display: flex; }
-    .pdf-item { border: none; border-radius: 0; overflow: visible; }
-    .pdf-label {
-      background: transparent;
-      border: none;
-      padding: 10px 0;
-      font-weight: 500;
-      font-size: 0.95rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      letter-spacing: 0.02em;
-      color: #2c3e50;
-      transition: color 0.2s;
-    }
-    .pdf-label {
-      cursor: pointer;
-      user-select: none;
-    }
-    .pdf-label:hover { color: #2980b9; }
-    .pdf-label-actions {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .pdf-label a { font-size: 0.82rem; color: #2980b9; text-decoration: none; font-weight: 400; }
-    .pdf-label a:hover { text-decoration: underline; }
-    .pdf-arrow { font-size: 0.7rem; opacity: 0.5; transition: transform 0.3s; }
-    .pdf-arrow.open { transform: rotate(180deg); }
-    .pdf-collapse { display: none; }
-    .pdf-collapse.open { display: block; }
-    iframe.pdf-viewer { width: 100%; height: 600px; border: none; display: block; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matematika</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,300;0,400;0,600;1,100;1,300&family=Share+Tech+Mono&family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400&display=swap" rel="stylesheet">
+<style>
 
-    .classes-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 20px;
-      margin-bottom: 40px;
-    }
-    .class-card {
-      background: #ffffff;
-      border-radius: 8px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-      padding: 28px 24px;
-      text-align: center;
-      text-decoration: none;
-      color: #1a252f;
-      border: none;
-      transition: transform 0.15s, box-shadow 0.15s;
-      display: block;
-    }
-    .class-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-    }
-    .class-card .card-title {
-      font-size: 1.1rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }
-    .class-card .card-meta { font-size: 0.8rem; color: #95a5a6; }
-    .feedback-box {
-      background: transparent;
-      border-radius: 0;
-      box-shadow: none;
-      padding: 24px 0;
-      margin-bottom: 32px;
-      border-top: 1px solid #e0e6ed;
-    }
-    .feedback-box h2 {
-      font-size: 1.05rem;
-      margin-bottom: 6px;
-      color: #1a252f;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-    .feedback-box p { font-size: 0.88rem; color: #7f8c8d; margin-bottom: 18px; line-height: 1.5; }
-    .feedback-box textarea {
-      width: 100%; height: 110px; padding: 12px 14px;
-      border: 1px solid #dce3ea; border-radius: 6px;
-      font-family: inherit; font-size: 0.92rem; resize: vertical;
-      outline: none; color: #2c3e50; transition: border-color 0.2s;
-    }
-    .feedback-box textarea:focus { border-color: #1a252f; }
-    .feedback-box button {
-      margin-top: 12px; padding: 10px 28px;
-      background: #1a252f; color: #f0f4f8; border: none;
-      border-radius: 6px; font-size: 0.9rem; font-weight: 600;
-      letter-spacing: 0.05em; text-transform: uppercase;
-      cursor: pointer; transition: background 0.2s;
-    }
-    .feedback-box button:hover { background: #2c3e50; }
-    .feedback-note { margin-top: 10px; font-size: 0.78rem; color: #b0b8c1; }
-  </style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { height: 100%; }
+
+:root {
+  --sb-vw:        16.145833vw;
+  --content-vw:   83.854167vw;
+  --rp-right:     1.041667vw;
+  --rp-width:     23.958333vw;
+  --content-pad:  72px;
+
+  --red:         #c82020;
+  --red-hot:     #ff3232;
+  --red-glow:    rgba(200, 28, 28, 0.50);
+  --red-dim:     rgba(200, 28, 28, 0.10);
+  --red-border:  rgba(200, 28, 28, 0.24);
+  --white:       #f0edec;
+  --gray:        #7a7672;
+  --gray-deep:   #3a3230;
+  --panel:       rgba(5, 2, 2, 0.82);
+  --sidebar-bg:  rgba(4, 1, 1, 0.90);
+
+  --f-display: 'Josefin Sans', sans-serif;
+  --f-mono:    'Share Tech Mono', monospace;
+  --f-serif:   'Cormorant Garamond', Georgia, serif;
+  --ease:      cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body {
+  height: 100%; overflow: hidden;
+  background: #060101 url('backgroundWide.png') left / cover no-repeat fixed;
+  color: var(--white);
+  font-family: var(--f-mono);
+  cursor: crosshair;
+}
+@media (max-width: 768px) {
+  body { background-image: url('backgroundLong.png'); background-position: left top; overflow: auto; }
+}
+
+.scanlines {
+  position: fixed; inset: 0; pointer-events: none; z-index: 998;
+  background: repeating-linear-gradient(
+    0deg, transparent 0px, transparent 3px,
+    rgba(0,0,0,0.045) 3px, rgba(0,0,0,0.045) 4px
+  );
+}
+.vignette {
+  position: fixed; inset: 0; pointer-events: none; z-index: 997;
+  background: radial-gradient(ellipse 85% 85% at 55% 50%,
+    transparent 30%, rgba(0,0,0,0.70) 100%);
+}
+.cursor-glow {
+  position: fixed; inset: 0; pointer-events: none; z-index: 996;
+  background: radial-gradient(circle 280px at var(--mx, 60%) var(--my, 50%),
+    rgba(160,18,18,0.055), transparent 70%);
+}
+.grain {
+  position: fixed; inset: 0; pointer-events: none; z-index: 999; opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+
+#loader {
+  position: fixed; inset: 0; z-index: 9999;
+  background: #050101;
+  display: flex; align-items: center; justify-content: center;
+  transition: opacity 0.9s var(--ease), visibility 0.9s;
+}
+#loader.out { opacity: 0; visibility: hidden; pointer-events: none; }
+
+.loader-inner {
+  display: flex; flex-direction: column; align-items: center; gap: 18px;
+  width: 260px;
+}
+.loader-sigil {
+  font-size: 28px; color: var(--red); opacity: 0.7;
+  animation: spin 8s linear infinite; line-height: 1;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.loader-wordmark {
+  font-family: var(--f-display);
+  font-size: 15px; font-weight: 300;
+  letter-spacing: 0.6em; text-transform: uppercase;
+}
+.loader-ratio {
+  font-size: 8px; letter-spacing: 0.28em; color: var(--red); opacity: 0.6;
+}
+.loader-subtitle {
+  font-size: 9px; letter-spacing: 0.3em; color: var(--gray); text-transform: uppercase;
+}
+.loader-track {
+  width: 100%; height: 1px; background: var(--gray-deep);
+  position: relative; overflow: hidden;
+}
+.loader-fill {
+  position: absolute; left: 0; top: 0; height: 100%;
+  background: var(--red); box-shadow: 0 0 14px var(--red-glow);
+  width: 0; transition: width 2s var(--ease);
+}
+.loader-pct {
+  font-size: 9px; letter-spacing: 0.2em; color: var(--red); align-self: flex-end;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: var(--sb-vw) var(--content-vw);
+  height: 100vh;
+  opacity: 0;
+  transition: opacity 1s var(--ease) 0.2s;
+}
+.layout.in { opacity: 1; }
+
+.sidebar {
+  width: var(--sb-vw);
+  height: 100vh;
+  background: transparent;
+  border-right: 1px solid rgba(160, 24, 24, 0.20);
+  display: flex; flex-direction: column;
+  padding: 36px 28px;
+  position: relative; z-index: 100;
+overflow: hidden;
+}
+
+.sidebar::after {
+  content: '';
+  position: absolute; right: 0; top: 8vh; bottom: 8vh; width: 1px;
+  background: linear-gradient(to bottom,
+    transparent, var(--red-border) 25%, var(--red-border) 75%, transparent);
+  pointer-events: none;
+}
+
+.sb-logo { margin-bottom: 44px; }
+.sb-wordmark {
+  font-family: var(--f-display);
+  font-size: 10px; font-weight: 300;
+  letter-spacing: 0.6em; text-transform: uppercase; color: var(--white);
+  margin-bottom: 4px;
+}
+.sb-tagline {
+  font-size: 8px; letter-spacing: 0.25em; color: var(--red); opacity: 0.6;
+}
+.sb-rule {
+  width: 100%; height: 1px; margin-top: 18px;
+  background: linear-gradient(to right, var(--red-border), transparent);
+}
+
+.sb-nav { flex: 1; display: flex; flex-direction: column; }
+
+.burger { display: none; }
+
+@media (max-width: 480px) {
+  aside[role="navigation"] .burger,
+  .sidebar .burger,
+  div.burger {
+    display: flex !important;
+    flex-direction: column;
+    gap: 5px;
+    padding: 8px;
+    margin-left: auto;
+    cursor: pointer;
+    z-index: 1001;
+    background: transparent;
+    width: 38px;
+    height: 38px;
+    align-items: center;
+    justify-content: center;
+  }
+  aside[role="navigation"] .burger span,
+  .sidebar .burger span,
+  div.burger span {
+    display: block !important;
+    width: 22px; height: 2px;
+    background-color: #f0edec !important;
+    border-radius: 1px;
+    transition: transform 0.25s var(--ease), opacity 0.25s;
+  }
+  aside[role="navigation"] .burger.open span:nth-child(1),
+  .sidebar .burger.open span:nth-child(1),
+  div.burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  aside[role="navigation"] .burger.open span:nth-child(2),
+  .sidebar .burger.open span:nth-child(2),
+  div.burger.open span:nth-child(2) { opacity: 0; }
+  aside[role="navigation"] .burger.open span:nth-child(3),
+  .sidebar .burger.open span:nth-child(3),
+  div.burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+}
+
+.nav-link {
+  display: flex; align-items: center; gap: 14px;
+  padding: 13px 0;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  color: var(--gray);
+  font-size: 10px; letter-spacing: 0.38em; text-transform: uppercase;
+  position: relative; cursor: crosshair;
+  transition: color 0.28s;
+}
+.nav-num {
+  font-size: 8px; letter-spacing: 0.18em;
+  color: var(--red); opacity: 0.45; width: 16px; flex-shrink: 0;
+  transition: opacity 0.28s;
+}
+.nav-bar {
+  position: absolute; left: -28px; top: 50%; transform: translateY(-50%);
+  width: 2px; height: 0;
+  background: var(--red); box-shadow: 0 0 10px var(--red-glow);
+  transition: height 0.38s var(--ease);
+}
+.nav-link.active, .nav-link:hover { color: var(--white); }
+.nav-link.active .nav-num, .nav-link:hover .nav-num { opacity: 1; }
+.nav-link.active .nav-bar { height: 26px; }
+.nav-link:hover:not(.active) .nav-bar { height: 12px; opacity: 0.45; }
+.nav-chevron {
+  margin-left: auto; font-size: 10px; color: var(--red);
+  opacity: 0; transform: translateX(-5px);
+  transition: opacity 0.28s, transform 0.28s;
+}
+.nav-link.active .nav-chevron, .nav-link:hover .nav-chevron {
+  opacity: 1; transform: translateX(0);
+}
+
+.sb-foot {
+  border-top: 1px solid rgba(160,24,24,0.15);
+  padding-top: 20px; display: flex; flex-direction: column; gap: 10px;
+}
+.sb-status {
+  display: flex; align-items: center; gap: 9px;
+  font-size: 8px; letter-spacing: 0.2em; color: var(--gray);
+}
+.pulse-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--red); box-shadow: 0 0 7px var(--red-glow);
+  animation: pulse 2.4s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+.sb-clock  { font-size: 9px; letter-spacing: 0.15em; color: var(--gray); opacity: 0.55; }
+.sb-copy   { font-size: 8px; letter-spacing: 0.15em; color: rgba(120,115,110,0.35); }
+
+.sb-ratio {
+  font-size: 7px; letter-spacing: 0.2em;
+  color: var(--red); opacity: 0.3;
+  border-top: 1px solid rgba(160,24,24,0.10);
+  padding-top: 8px; margin-top: 4px;
+}
+
+.content {
+  width: var(--content-vw);
+  height: 100vh; position: relative; overflow: hidden;
+}
+
+.mark {
+  position: absolute; width: 12px; height: 12px;
+  border-color: var(--red-border); border-style: solid;
+  z-index: 10; pointer-events: none;
+}
+.mark.tl { top: 28px; left: 36px; border-width: 1px 0 0 1px; }
+.mark.tr { top: 28px; right: 28px; border-width: 1px 1px 0 0; }
+.mark.bl { bottom: 28px; left: 36px; border-width: 0 0 1px 1px; }
+.mark.br { bottom: 28px; right: 28px; border-width: 0 1px 1px 0; }
+
+.coord {
+  position: absolute; font-size: 8px; letter-spacing: 0.14em;
+  color: var(--red); opacity: 0.38; pointer-events: none; z-index: 10;
+  font-family: var(--f-mono); text-transform: uppercase;
+}
+.coord.tl { top: 18px; left: 54px; }
+.coord.tr { top: 18px; right: 44px; }
+.coord.bl { bottom: 18px; left: 54px; }
+.coord.br { bottom: 18px; right: 44px; }
+
+.page {
+  position: absolute; inset: 0;
+  display: flex; align-items: center;
+  padding: 72px 64px 72px var(--content-pad);
+  opacity: 0;
+  transform: translateX(-14px);
+  transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+  pointer-events: none;
+}
+.page.active  { opacity: 1; transform: translateX(0); pointer-events: all; }
+.page.leaving { opacity: 0; transform: translateX(14px); }
+
+#home .main-col { flex: 1; max-width: 820px; }
+
+.eyebrow {
+  display: flex; align-items: center; gap: 14px;
+  font-size: 9px; letter-spacing: 0.42em; text-transform: uppercase;
+  color: var(--red); margin-bottom: 28px;
+}
+.eyebrow::before {
+  content: ''; width: 24px; height: 1px;
+  background: var(--red); box-shadow: 0 0 8px var(--red-glow); flex-shrink: 0;
+}
+
+.hero-title {
+  font-family: var(--f-display);
+  font-size: clamp(52px, 6.5vw, 92px);
+  font-weight: 100; line-height: 0.96;
+  letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px;
+}
+.hero-title em {
+  font-style: italic; font-weight: 300;
+  color: var(--red-hot); display: block;
+  text-shadow: 0 0 50px var(--red-glow), 0 0 100px rgba(200,28,28,0.18);
+}
+
+.hero-kicker {
+  font-family: var(--f-serif);
+  font-size: clamp(14px, 1.6vw, 20px);
+  font-style: italic; font-weight: 300;
+  color: var(--gray); letter-spacing: 0.05em;
+  margin-bottom: 48px; padding-left: 2px;
+}
+
+.hero-body {
+  font-size: 11px; line-height: 2.1; letter-spacing: 0.07em;
+  color: rgba(200,190,188,0.60);
+  max-width: 500px;
+  border-left: 1px solid var(--red-border);
+  padding-left: 18px; margin-bottom: 52px;
+}
+
+.cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; gap: 14px;
+  font-family: var(--f-mono); font-size: 9px;
+  letter-spacing: 0.38em; text-transform: uppercase;
+  color: var(--white); text-decoration: none;
+  border: 1px solid var(--red-border);
+  padding: 13px 28px;
+  cursor: crosshair; position: relative; overflow: hidden;
+  transition: color 0.3s, border-color 0.3s, box-shadow 0.3s;
+  background: transparent;
+}
+.btn::before {
+  content: ''; position: absolute; inset: 0;
+  background: var(--red-dim); opacity: 0; transition: opacity 0.3s;
+}
+.btn:hover {
+  color: var(--red-hot); border-color: var(--red);
+  box-shadow: 0 0 22px var(--red-glow), inset 0 0 22px var(--red-dim);
+}
+.btn:hover::before { opacity: 1; }
+.btn-arrow { font-size: 13px; transition: transform 0.3s; }
+.btn:hover .btn-arrow { transform: translateX(5px); }
+
+.home-ambient {
+  position: absolute;
+  right: var(--rp-right);
+  width: var(--rp-width);
+  top: 80px; bottom: 80px;
+  display: flex; flex-direction: column;
+  justify-content: center; gap: 0;
+  opacity: 0;
+  transition: opacity 0.9s var(--ease) 0.4s;
+  pointer-events: none;
+}
+#home.active .home-ambient { opacity: 1; pointer-events: all; }
+
+.ambient-rule {
+  width: 100%; height: 1px; margin: 24px 0;
+  background: linear-gradient(to right, transparent, var(--red-border), transparent);
+}
+.ambient-label {
+  font-size: 8px; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--red); opacity: 0.5; margin-bottom: 20px;
+}
+.constant-row {
+  display: flex; align-items: baseline; gap: 16px;
+  padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+.const-sym {
+  font-family: var(--f-serif);
+  font-size: 28px; font-style: italic; color: var(--white); opacity: 0.75;
+  width: 26px; text-align: center; flex-shrink: 0;
+}
+.const-val {
+  font-family: var(--f-mono); font-size: 13px; letter-spacing: 0.05em; color: var(--gray);
+}
+.const-val strong { color: var(--white); font-weight: normal; }
+.const-name {
+  font-size: 8px; letter-spacing: 0.2em; color: var(--red);
+  opacity: 0.5; text-transform: uppercase; margin-left: auto; text-align: right;
+}
+.ambient-quote {
+  font-family: var(--f-serif);
+  font-size: 14px; font-style: italic;
+  color: rgba(200,190,188,0.45); line-height: 1.7;
+  padding-left: 14px; border-left: 1px solid var(--red-border);
+}
+.ambient-attr {
+  font-size: 8px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--gray); opacity: 0.4; padding-left: 14px; margin-top: 8px;
+}
+
+#work { align-items: flex-start; padding-top: 90px; }
+#work .inner { width: 100%; }
+
+.section-eyebrow {
+  display: flex; align-items: center; gap: 16px; margin-bottom: 40px;
+}
+.s-num {
+  font-size: 9px; letter-spacing: 0.25em; color: var(--red); opacity: 0.55;
+}
+.s-title {
+  font-family: var(--f-display);
+  font-size: clamp(24px, 3.2vw, 44px);
+  font-weight: 100; letter-spacing: 0.18em; text-transform: uppercase;
+}
+.s-rule { flex: 1; height: 1px; background: var(--red-border); margin-left: 8px; }
+
+.work-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: var(--red-border); border: 1px solid var(--red-border);
+}
+.work-card {
+  background: var(--panel); padding: 22px 20px 20px;
+  cursor: crosshair; position: relative; overflow: hidden;
+  transition: background 0.32s;
+}
+.work-card::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+  background: var(--red); box-shadow: 0 0 8px var(--red-glow);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.4s var(--ease);
+}
+.work-card:hover { background: rgba(10,3,3,0.90); }
+.work-card:hover::after { transform: scaleX(1); }
+.wc-id { font-size: 8px; letter-spacing: 0.22em; color: var(--red); opacity: 0.5; margin-bottom: 12px; }
+.wc-name {
+  font-family: var(--f-display);
+  font-size: 15px; font-weight: 300; letter-spacing: 0.11em;
+  text-transform: uppercase; margin-bottom: 10px;
+}
+.wc-desc { font-size: 10px; line-height: 1.85; letter-spacing: 0.05em; color: var(--gray); }
+.wc-domain {
+  display: inline-block; margin-top: 14px;
+  font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--red); border: 1px solid var(--red-border); padding: 3px 8px;
+}
+
+#about .inner { width: 100%; max-width: 900px; }
+
+.about-grid {
+  display: grid; grid-template-columns: 1.3fr 1fr; gap: 64px; align-items: start;
+}
+.about-body {
+  font-family: var(--f-serif);
+  font-size: 17px; line-height: 1.9; font-weight: 300;
+  color: rgba(220,212,210,0.75); margin-bottom: 28px;
+}
+.about-body em { color: var(--red-hot); font-style: italic; }
+
+.blockquote {
+  font-family: var(--f-serif);
+  font-size: 20px; font-style: italic; font-weight: 300;
+  color: var(--white); line-height: 1.55;
+  padding: 0 0 0 20px; border-left: 1px solid var(--red); margin-bottom: 10px;
+}
+.blockquote-attr {
+  font-size: 8px; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--gray); padding-left: 20px;
+}
+
+.field-list { list-style: none; margin-top: 32px; }
+.field-list li {
+  font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+  padding: 11px 0; border-bottom: 1px solid rgba(255,255,255,0.04);
+  color: var(--gray); display: flex; align-items: center; gap: 12px;
+  transition: color 0.24s;
+}
+.field-list li::before {
+  content: ''; width: 18px; height: 1px; background: var(--red-border);
+  flex-shrink: 0; transition: width 0.3s, background 0.3s, box-shadow 0.3s;
+}
+.field-list li:hover { color: var(--white); }
+.field-list li:hover::before { width: 28px; background: var(--red); box-shadow: 0 0 7px var(--red-glow); }
+
+#contact .inner { max-width: 620px; }
+
+.contact-intro {
+  font-family: var(--f-serif);
+  font-size: 17px; font-style: italic; font-weight: 300;
+  color: var(--gray); margin-bottom: 42px; line-height: 1.75;
+}
+.form { display: flex; flex-direction: column; gap: 2px; }
+.field {
+  position: relative; border-bottom: 1px solid var(--gray-deep);
+  transition: border-color 0.3s;
+}
+.field:focus-within { border-color: var(--red); }
+.field:focus-within .flabel { color: var(--red); }
+.flabel {
+  position: absolute; top: 13px; left: 0;
+  font-size: 8px; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--gray); pointer-events: none;
+  transition: top 0.22s, font-size 0.22s, color 0.22s;
+}
+.flabel.up { top: -2px; font-size: 7px; }
+.finput {
+  width: 100%; background: transparent; border: none; outline: none;
+  color: var(--white); font-family: var(--f-mono);
+  font-size: 12px; letter-spacing: 0.06em;
+  padding: 28px 0 10px; resize: none;
+}
+
+@media (max-width: 768px) and (min-width: 481px) {
+  .sidebar { width: 18vw; padding: 24px 16px; }
+  .sb-logo { margin-bottom: 28px; }
+  .sb-wordmark { font-size: 9px; }
+  .sb-tagline { font-size: 7px; }
+  .sb-rule { margin-top: 14px; }
+  .nav-link { padding: 10px 0; font-size: 9px; gap: 10px; }
+  .nav-num { font-size: 7px; width: 14px; }
+  .sb-foot { padding-top: 14px; gap: 8px; }
+  .sb-status, .sb-clock, .sb-copy { font-size: 7px; }
+  .sb-ratio { font-size: 6px; }
+  .content { padding: 48px 32px; }
+  .hero-title { font-size: clamp(36px, 5vw, 52px); }
+  .hero-kicker { font-size: clamp(12px, 1.4vw, 16px); }
+  .hero-body { font-size: 10px; max-width: 420px; }
+  .work-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .layout { display: flex; flex-direction: column; height: auto; min-height: 100vh; overflow: visible; }
+  .sidebar { width: 100%; height: 70px; flex-direction: row; align-items: center; padding: 0 20px; border-right: none; border-bottom: 1px solid rgba(160,24,24,0.20); }
+  .sidebar::after { display: none; }
+  .sb-logo { margin-bottom: 0; display: flex; align-items: center; gap: 12px; }
+  .sb-rule, .sb-tagline, .sb-foot, .sb-ratio { display: none; }
+  .sb-wordmark { font-size: 9px; letter-spacing: 0.5em; }
+  .sb-nav { position: fixed; top: 70px; left: 0; right: 0; background: rgba(4,1,1,0.98); flex-direction: column; gap: 0; padding: 14px 20px; transform: translateY(-100%); opacity: 0; transition: transform 0.35s var(--ease), opacity 0.35s; z-index: 1000; }
+  .sb-nav.open { transform: translateY(0); opacity: 1; }
+  .nav-link { padding: 14px 0; border-bottom: none; font-size: 9px; letter-spacing: 0.32em; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .nav-link.active { border-bottom-color: transparent; }
+  .nav-bar, .nav-chevron, .nav-num { display: none; }
+  .content { width: 100%; height: auto; overflow: visible; }
+  .mark, .coord, .home-ambient { display: none; }
+  .page { position: relative; opacity: 1; transform: none; pointer-events: all; display: none; padding: 48px 24px; flex-direction: column; align-items: flex-start; }
+  .page.active { display: flex; }
+  .work-grid { grid-template-columns: 1fr; }
+  .about-grid { grid-template-columns: 1fr; gap: 36px; }
+  #work { padding-top: 48px; }
+  .hero-title { font-size: 38px; }
+}
+
+</style>
 </head>
 <body>
 
-  <h1>Matematikos užduotys</h1>
-  <p class="subtitle">Pasirinkite klasę</p>
+<div class="scanlines" aria-hidden="true"></div>
+<div class="vignette"  aria-hidden="true"></div>
+<div class="cursor-glow" id="cg" aria-hidden="true"></div>
+<div class="grain"     aria-hidden="true"></div>
 
-  <div class="classes-grid">
-    <a class="class-card" href="12-klase.html">
-      <div class="card-title">12 klasė</div>
-      <div class="card-meta">2 temos</div>
-    </a>
-    <a class="class-card" href="8-klase.html">
-      <div class="card-title">8 klasė</div>
-      <div class="card-meta">6 temos</div>
-    </a>
-    <a class="class-card" href="9-klase.html">
-      <div class="card-title">9 klasė</div>
-      <div class="card-meta">1 tema</div>
-    </a>
+<div id="loader">
+  <div class="loader-inner">
+    <div class="loader-sigil" aria-hidden="true">✦</div>
+    <div class="loader-wordmark">Matematika</div>
+    <div class="loader-ratio">Sidebar 310 : 1920 viewport</div>
+    <div class="loader-subtitle">Initializing</div>
+    <div class="loader-track"><div class="loader-fill" id="lf"></div></div>
+    <div class="loader-pct" id="lp">0%</div>
   </div>
+</div>
 
-  <div class="feedback-box">
-    <h2>Pasiūlymai ir pastabos</h2>
-    <p>Turite idėjų, ką pakeisti ar patobulinti? Rašykite – atsakysiu kuo greičiau.</p>
-    <textarea id="feedbackText" placeholder="Jūsų žinutė..."></textarea>
-    <br/>
-    <button onclick="sendFeedback()">Siųsti</button>
-    <p class="feedback-note">
-      Paspaudus „Siųsti" atsidarys jūsų el. pašto programa su užpildyta žinute.
-      Jūsų el. pašto adreso įvesti nereikia.
-    </p>
-  </div>
+<div class="layout" id="layout" aria-hidden="true">
 
-  <script>
-    function sendFeedback() {
-      const msg = document.getElementById('feedbackText').value.trim();
-      if (!msg) { alert('Prašome įvesti žinutę prieš siunčiant.'); return; }
-      const to      = 'simas.devmail@gmail.com';
-      const subject = encodeURIComponent('Pastaba / pasiūlymas dėl svetainės');
-      const body    = encodeURIComponent(msg);
-      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+  <aside class="sidebar" role="navigation" aria-label="Svetainės navigacija">
+    <div class="sb-logo">
+      <div class="sb-wordmark">Matematika</div>
+      <div class="sb-tagline">Est. MMXXVI · Vilnius</div>
+      <div class="sb-rule"></div>
+    </div>
+
+    <div class="burger" id="burger" aria-label="Perjungti meniu" role="button" tabindex="0">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav class="sb-nav" id="sb-nav">
+      <a class="nav-link active" href="#" data-sec="home">
+        <div class="nav-bar"></div>
+        <span class="nav-num">01</span>
+        <span>Pradžia</span>
+        <span class="nav-chevron">›</span>
+      </a>
+      <a class="nav-link" href="#" data-sec="work">
+        <div class="nav-bar"></div>
+        <span class="nav-num">02</span>
+        <span>Uždaviniai</span>
+        <span class="nav-chevron">›</span>
+      </a>
+      <a class="nav-link" href="#" data-sec="about">
+        <div class="nav-bar"></div>
+        <span class="nav-num">03</span>
+        <span>Apie</span>
+        <span class="nav-chevron">›</span>
+      </a>
+      <a class="nav-link" href="#" data-sec="contact">
+        <div class="nav-bar"></div>
+        <span class="nav-num">04</span>
+        <span>Kontaktai</span>
+        <span class="nav-chevron">›</span>
+      </a>
+    </nav>
+
+    <div class="sb-foot">
+      <div class="sb-status">
+        <div class="pulse-dot"></div>System Online
+      </div>
+      <div class="sb-clock" id="clk">--:--:--</div>
+      <div class="sb-copy">© 2026 Matematika</div>
+    </div>
+    <div class="sb-ratio">310 : 1920 — 16.145833vw</div>
+  </aside>
+
+  <main class="content" id="content">
+
+    <div class="mark tl" aria-hidden="true"></div>
+    <div class="mark tr" aria-hidden="true"></div>
+    <div class="mark bl" aria-hidden="true"></div>
+    <div class="mark br" aria-hidden="true"></div>
+    <span class="coord tl" aria-hidden="true">X:0310 / Y:0000</span>
+    <span class="coord tr" aria-hidden="true">W:1610 / H:1080</span>
+    <span class="coord bl" aria-hidden="true">RATIO 310:1920 · 16.145833vw</span>
+    <span class="coord br" aria-hidden="true">v3.0 · 2026</span>
+
+    <section class="page active" id="home">
+      <div class="main-col">
+        <div class="eyebrow">Serija I — Pagrindai</div>
+        <h1 class="hero-title">
+          Matematikos<br><em>Menas</em>
+        </h1>
+        <p class="hero-kicker">Kur abstrakcija tampa vienintele tikrove</p>
+        <p class="hero-body">
+          Matematika nėra aprašymo įrankis — ji yra pačios realybės architektūra. 
+          Mes naviguojame struktūras, kurios išlieka, kai viskas atsitiktinė yra pašalinta: 
+          gryna forma, gryni santykiai, gryna tiesa.
+        </p>
+        <div class="cta-row">
+          <a class="btn" href="#" data-nav="work">
+            Peržiūrėti uždavinius <span class="btn-arrow">→</span>
+          </a>
+          <a class="btn" href="#" data-nav="contact">
+            Susisiekti <span class="btn-arrow">→</span>
+          </a>
+        </div>
+      </div>
+
+      <aside class="home-ambient">
+        <div class="ambient-label">Fundalingos konstantos</div>
+        <div class="ambient-rule"></div>
+        <div class="constant-row">
+          <span class="const-sym">π</span>
+          <div><div class="const-val"><strong>3.14159</strong> 265358…</div></div>
+          <span class="const-name">Apskritimo konstanta</span>
+        </div>
+        <div class="constant-row">
+          <span class="const-sym">e</span>
+          <div><div class="const-val"><strong>2.71828</strong> 182845…</div></div>
+          <span class="const-name">Natūralus augimas</span>
+        </div>
+        <div class="constant-row">
+          <span class="const-sym">φ</span>
+          <div><div class="const-val"><strong>1.61803</strong> 398874…</div></div>
+          <span class="const-name">Auksinė proporcija</span>
+        </div>
+        <div class="constant-row">
+          <span class="const-sym">i</span>
+          <div><div class="const-val"><strong>√(−1)</strong></div></div>
+          <span class="const-name">Menamasis vienetas</span>
+        </div>
+        <div class="ambient-rule"></div>
+        <p class="ambient-quote">
+          "Dievas naudojo gražią matematiką kurdamas pasaulį."
+        </p>
+        <div class="ambient-attr">— Paul Dirac</div>
+      </aside>
+    </section>
+
+    <section class="page" id="work">
+      <div class="inner">
+        <div class="section-eyebrow">
+          <span class="s-num">02</span>
+          <h2 class="s-title">Užduotys pagal klasę</h2>
+          <div class="s-rule"></div>
+        </div>
+        <div class="work-grid">
+          <a class="work-card" href="uzdaviniai.html">
+            <div class="wc-id">8-12 kl.</div>
+            <div class="wc-name">Visos užduotys</div>
+            <div class="wc-desc">Pilnas uždavinių rinkinys visoms klasėms. Pasirinkite temą ir klasę.</div>
+            <span class="wc-domain">Pagrindinis</span>
+          </a>
+          <a class="work-card" href="8-klase.html">
+            <div class="wc-id">8 kl.</div>
+            <div class="wc-name">8 klasė</div>
+            <div class="wc-desc">Uždaviniai aštuntokams: algebrinės išraiškos, lygtys, nelygybės.</div>
+            <span class="wc-domain">8 klase</span>
+          </a>
+          <a class="work-card" href="9-klase.html">
+            <div class="wc-id">9 kl.</div>
+            <div class="wc-name">9 klasė</div>
+            <div class="wc-desc">Uždaviniai devintokams: funkcijos, kvadratinės lygtys, geometrija.</div>
+            <span class="wc-domain">9 klase</span>
+          </a>
+          <a class="work-card" href="12-klase.html">
+            <div class="wc-id">12 kl.</div>
+            <div class="wc-name">12 klasė</div>
+            <div class="wc-desc">Maturitui ruošiamieji uždaviniai: integralai, tikimybės, ribos.</div>
+            <span class="wc-domain">12 klase</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="about">
+      <div class="inner">
+        <div class="section-eyebrow">
+          <span class="s-num">03</span>
+          <h2 class="s-title">Apie</h2>
+          <div class="s-rule"></div>
+        </div>
+        <div class="about-grid">
+          <div>
+            <p class="about-body">
+              <em>Statoma...</em> Šis puslapis dar yra kuriamas. 
+              Čia bus pateikta informacija apie svetainės tikslus, naudojamus šaltinius 
+              ir metodiką, kaip paruošiami uždaviniai moksleiviams.
+            </p>
+            <p class="about-body">
+              Tuo tarpu galite peržiūrėti užduotis skyriuje 
+              <a href="#" style="color:var(--red)" data-nav="work">Uždaviniai</a> 
+              arba susisiekti su mumis.
+            </p>
+            <a class="btn" href="#" data-nav="contact">
+              Susisiekti <span class="btn-arrow">→</span>
+            </a>
+          </div>
+          <div>
+            <blockquote class="blockquote">
+              "Matematika yra mokslas apie santykius tarp dydžių."
+            </blockquote>
+            <div class="blockquote-attr">— Karolis Frydrichas Gausas</div>
+            <ul class="field-list">
+              <li>Algebra</li>
+              <li>Geometrija</li>
+              <li>Analizinė teorija</li>
+              <li>Funkcijų analizė</li>
+              <li>Topologija</li>
+              <li>Logika</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="contact">
+      <div class="inner">
+        <div class="section-eyebrow">
+          <span class="s-num">04</span>
+          <h2 class="s-title">Kontaktai</h2>
+          <div class="s-rule"></div>
+        </div>
+        <p class="contact-intro">
+          Turite klausimų, pasiūlymų ar radote klaidą? Rašykite — atsakysiu kuo greičiau.
+        </p>
+        <form class="form" id="cf" novalidate>
+          <div class="field">
+            <label class="flabel" for="fn">Vardas</label>
+            <input class="finput" id="fn" type="text" autocomplete="off">
+          </div>
+          <div class="field">
+            <label class="flabel" for="fe">El. paštas</label>
+            <input class="finput" id="fe" type="email" autocomplete="off">
+          </div>
+          <div class="field">
+            <label class="flabel" for="fm">Žinutė</label>
+            <textarea class="finput" id="fm" rows="4"></textarea>
+          </div>
+          <div style="margin-top:36px">
+            <button type="submit" class="btn">
+              Siųsti <span class="btn-arrow">→</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script>
+const burger = document.getElementById('burger');
+const sbNav = document.getElementById('sb-nav');
+if (burger && sbNav) {
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('open');
+    sbNav.classList.toggle('open');
+  });
+  burger.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      burger.classList.toggle('open');
+      sbNav.classList.toggle('open');
     }
-  </script>
+  });
+}
 
+document.addEventListener('mousemove', e => {
+  document.documentElement.style.setProperty('--mx', e.clientX + 'px');
+  document.documentElement.style.setProperty('--my', e.clientY + 'px');
+});
+
+const clk = document.getElementById('clk');
+(function tick() {
+  clk.textContent = new Date().toLocaleTimeString('en-GB', { hour12: false });
+  setTimeout(tick, 1000);
+})();
+
+(function () {
+  const fill   = document.getElementById('lf');
+  const pct    = document.getElementById('lp');
+  const loader = document.getElementById('loader');
+  const layout = document.getElementById('layout');
+  let p = 0;
+  const iv = setInterval(() => {
+    p += Math.random() * 16 + 5;
+    if (p > 100) p = 100;
+    fill.style.width = p + '%';
+    pct.textContent  = Math.floor(p) + '%';
+    if (p >= 100) {
+      clearInterval(iv);
+      setTimeout(() => {
+        loader.classList.add('out');
+        layout.classList.add('in');
+        layout.removeAttribute('aria-hidden');
+      }, 450);
+    }
+  }, 80);
+})();
+
+const pages    = document.querySelectorAll('.page');
+const navLinks = document.querySelectorAll('.nav-link');
+
+function go(id) {
+  pages.forEach(p => {
+    if (p.id === id) {
+      p.classList.remove('leaving');
+      p.classList.add('active');
+    } else if (p.classList.contains('active')) {
+      p.classList.add('leaving');
+      p.classList.remove('active');
+      setTimeout(() => p.classList.remove('leaving'), 650);
+    }
+  });
+  navLinks.forEach(l => l.classList.toggle('active', l.dataset.sec === id));
+}
+
+navLinks.forEach(l =>
+  l.addEventListener('click', e => {
+    e.preventDefault();
+    go(l.dataset.sec);
+    if (burger && burger.classList.contains('open')) {
+      burger.classList.remove('open');
+      sbNav.classList.remove('open');
+    }
+  })
+);
+document.querySelectorAll('[data-nav]').forEach(b =>
+  b.addEventListener('click', e => { e.preventDefault(); go(b.dataset.nav); })
+);
+
+const order = ['home', 'work', 'about', 'contact'];
+document.addEventListener('keydown', e => {
+  const cur = document.querySelector('.page.active');
+  const i = order.indexOf(cur?.id);
+  if ((e.key === 'ArrowDown' || e.key === 'ArrowRight') && i < order.length - 1) go(order[i + 1]);
+  if ((e.key === 'ArrowUp'   || e.key === 'ArrowLeft')  && i > 0)                go(order[i - 1]);
+});
+
+document.querySelectorAll('.finput').forEach(inp => {
+  const lbl = inp.previousElementSibling;
+  const upd = () => lbl.classList.toggle('up', !!inp.value || document.activeElement === inp);
+  inp.addEventListener('input', upd);
+  inp.addEventListener('focus', upd);
+  inp.addEventListener('blur',  upd);
+});
+
+document.getElementById('cf').addEventListener('submit', e => {
+  e.preventDefault();
+  const name = document.getElementById('fn').value.trim();
+  const email = document.getElementById('fe').value.trim();
+  const msg = document.getElementById('fm').value.trim();
+  if (!msg) { alert('Prašome įvesti žinutę prieš siunčiant.'); return; }
+  const to      = 'simas.devmail@gmail.com';
+  const subject = encodeURIComponent('Žinutė iš matematika.lt');
+  const body    = encodeURIComponent(`Vardas: ${name}\nEl. paštas: ${email}\n\nŽinutė:\n${msg}`);
+  window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+});
+</script>
 </body>
 </html>
