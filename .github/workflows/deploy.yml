@@ -40,4 +40,4 @@ jobs:
             node_modules/**
             12_klasė_tex/**
             *.py
-          dangerous-clean-slate: true   # optional: for one cleanup run
+          dangerous-clean-slate: false   # optional: for one cleanup run
