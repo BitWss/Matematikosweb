@@ -21,6 +21,9 @@ jobs:
       - name: Generate HTML files
         run: python gen.py
 
+      - name: Clear FTP sync state (force re-check)
+        run: rm -f .ftp-deploy-sync-state.json
+
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
